@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/projects.css">
+    <!--
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css"> 
+    -->
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/"><img src="/static/images/logo/dalle1.png" class="img_logo"/></a>
+      </div>
+      <div class="name">INES</div> 
+      <div class="menu">
+        <ul class="ulnav">
+          <li>HOME</li>
+          <li>TEAM</li>
+          <li>RESEARCH</li>
+          <li>GALLERY</li>
+          <li>BLOG</li>
+        </ul>
+      </div>
+    </header>
+    <nav>
+      Projects (Article Piuctures)
+    </nav>
+    <section>
+      {% if article_list %}
+        {% for article in article_list %}
+          <div class="article_picture">
+            <a href="/" class="img_article"><img src={{article.article_photo_path}}/></a>
+          </div>
+          <div class="article_meta">
+            <div class="article_name">{{article.article_name}}</div>
+            <div class="article_tag">{{article.article_keywords}}</div>
+            <div class="article_abstract">
+              {{article.article_abstract}}
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </section>
+    <footer>
+      <p>&lt;footer&gt;(사이트 하단)</p>
+    </footer>
+  </body>
+</html>
+  
