@@ -1,0 +1,95 @@
+/* menu bar */
+ /* main Styles */
+
+.menu {
+    width:1000px;
+    overflow:hidden;
+    margin:150px auto;
+}
+.menu > li {
+    width: 20%;
+    float: right;
+    text-align: center;
+    line-height: 40px;
+    background-color: #f1eded;
+}
+.menu a {
+    color: #020101;
+}
+
+.submenu {
+    height: 0;
+    overflow: hidden;
+}
+
+.submenu > li {
+    line-height: 40px;
+    background-color: #937c7c;
+}
+.menu > li:hover {
+    background-color: #937c7c;
+    transition-duration: 0.5s;
+}
+
+.menu > li:hover .submenu {
+    height: 120px;
+    transition-duration: 0.5s;
+}
+
+* {padding: 100; margin: 0; list-style: none;}
+body {padding:100px;}
+
+/*history part*/
+.history h2 {position: relative; font-size: 33px; color: #000; line-height: 1;}
+.history h2:before {
+  content:""; position: absolute;
+  left:-48px; top:50%; transform: translateY(-50%);
+  width: 17px; height: 17px; border-radius: 100%;
+  background:#fff; border: 5px solid #171312;
+  box-sizing: border-box;}
+
+.history div {position: relative; padding: 0 0 0 48px;}
+.history div:before { content:""; position:absolute; left:8px; top:0;
+  width: 2px; height:100%; background:#ddd;}
+.history div:first-child:before { top:10px; height:calc(100% - 10px);}
+
+
+.history ol { padding: 20px 0 74px; }
+.history li {font-size: 17px; color:#000; line-height: 50px;  }
+
+
+*{
+    margin: 0;
+    padding: 0;
+  }
+  /* designing the text*/
+  /*
+  .shake {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    color: #020101;
+  }
+  /*creating the shake animation*/
+    
+.shake:hover h2{
+    animation:  shake 0.8s  ;
+  }
+  
+  @keyframes shake{
+    0%{
+      transform: translateX(0)
+    }
+    25%{
+      transform: translateX(25px);
+    }
+      
+    50%{
+      transform: translateX(-25px);
+    }
+    100%{
+      transform: translateX(0px);
+    }
+  }
