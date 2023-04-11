@@ -23,8 +23,8 @@ function calculateDeg(){
     path.style.transition = "background-color 5s ease";
     bg.style.transition = "background-color 5s ease";
   } else {
-    path.style.backgroundColor = "#c9dbe9;";
-    bg.style.backgroundColor = "#c9dbe9;";
+    path.style.backgroundColor = "#c9dbe9";
+    bg.style.backgroundColor = "#c9dbe9";
     path.style.transition = "background-color 5s ease";
     bg.style.transition = "background-color 5s ease";
   }

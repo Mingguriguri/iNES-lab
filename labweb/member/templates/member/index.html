@@ -2,82 +2,31 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/static/css/common.css">
     <link rel="stylesheet" href="/static/css/member.css">
-    <!--
-    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
-    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css"> 
-    -->
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <a href="/"><img src="/static/images/logo/dalle1.png" class="img_logo"/></a>
-      </div>
-      <div class="name">INES</div> 
-      <div class="menu">
-        <ul class="ulnav">
-          <li>HOME</li>
-          <li>TEAM</li>
-          <li>RESEARCH</li>
-          <li>GALLERY</li>
-          <li>BLOG</li>
+    <!--네비게이션 바-->
+    <div class="header">
+        <div class="logoimg">
+            <img src="static/example_logo.png">
+        </div>
+        <h1 class="mainnav">iNES</h1>
+        <ul class="navbar">  
+            <li><a href="file:///C:/Users/rlaal/Desktop/iNES%20Webpage/main.html">HOME</a></li>
+            <li><a href="#">TEAM</a></li>
+            <li><a href="file:///C:/Users/rlaal/Desktop/iNES%20Webpage/publications.html">RESEARCH</a></li>
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="https://kojungbeom.github.io/">BLOG</a></li>
         </ul>
-      </div>
-    </header>
-    <nav>
-      <aside>
-        <div class="side1">MENU</div>
-        <div class="side2">
-          <ul>
-            <li>TEAM</li>
-            <li>MEMBER</li>
-            <li>HISTORY</li>
-            <li>CONTACT US</li>
-          </ul>
-        </div>
-      </aside>
-      <div class="icon1">
-        <div class="scene">
-          <div class="carousel">
-            <div class="carousel__cell"><a href="/"><img src="/static/images/logo/dalle1.png" class="img_icon"/></a></div>
-            <div class="carousel__cell"><a href="/"><img src="/static/images/logo/dalle2.png" class="img_icon"/></a></div>
-            <div class="carousel__cell"><a href="/"><img src="/static/images/logo/dalle3.png" class="img_icon"/></a></div>
-            <div class="carousel__cell"><a href="/"><img src="/static/images/logo/dalle4.png" class="img_icon"/></a></div>
-            <div class="carousel__cell"><a href="/"><img src="/static/images/logo/dalle1.png" class="img_icon"/></a></div>
-            <div class="carousel__cell"><a href="/"><img src="/static/images/logo/dalle2.png" class="img_icon"/></a></div>
-            <div class="carousel__cell"><a href="/"><img src="/static/images/logo/dalle3.png" class="img_icon"/></a></div>
-            <div class="carousel__cell"><a href="/"><img src="/static/images/logo/dalle4.png" class="img_icon"/></a></div>
-            <div class="carousel__cell"><a href="/"><img src="/static/images/logo/dalle1.png" class="img_icon"/></a></div>
-          </div>
-        </div>
-        <div class="icon11">
-          <button class="previous-button">Previous</button>
-          <button class="next-button">Next</button>
-        </div>
-      </div>
-      <script>
-        var carousel = document.querySelector('.carousel');
-        var cellCount = 9;
-        var selectedIndex = 0;
-  
-        function rotateCarousel() {
-          var angle = selectedIndex / cellCount * -360;
-          carousel.style.transform = 'translateZ(-288px) rotateY(' + angle + 'deg)';
-        }
+    </div>
+	
+<!--대표 이미지 부분-->
 
-        var prevButton = document.querySelector('.previous-button');
-        prevButton.addEventListener( 'click', function() {
-          selectedIndex--;
-          rotateCarousel();
-        });
-
-        var nextButton = document.querySelector('.next-button');
-        nextButton.addEventListener( 'click', function() {
-          selectedIndex++;
-          rotateCarousel();
-        });
-      </script>
-    </nav>
+    <div class="main-image-section">
+       <img src="static/example2.jpg">
+    </div>
+    <div class="contents">
     <div class="midMember">
       <ul class="mem">MEMBER</ul>
     </div>
@@ -91,9 +40,31 @@
         {% endfor %}
       {% endif %}
     </section>
-    <footer>
-      <p>&lt;footer&gt;(사이트 하단)</p>
-    </footer>
+    </div>
   </body>
+  <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3>iNES AI team</h3>
+                    <p>Address: 1234 Main Street, City Name, Country</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@company.com</p>
+                </div>
+
+                <div class="col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                    <li><a href="file:///C:/Users/rlaal/Desktop/iNES%20Webpage/main.html">HOME</a></li>
+                    <li><a href="#">TEAM</a></li>
+                    <li><a href="file:///C:/Users/rlaal/Desktop/iNES%20Webpage/publications.html">RESEARCH</a></li>
+                    <li><a href="#">GALLERY</a></li>
+                    <li><a href="https://kojungbeom.github.io/">BLOG</a></li>
+                    </ul>
+                </div>
+            </div>            
+        </div> 
+    </div>
 </html>
   

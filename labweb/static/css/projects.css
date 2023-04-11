@@ -2,11 +2,6 @@ a {
     text-decoration: none; /* 기본 밑줄을 제거합니다 */
     color: #888;
 }
-.img_logo {
-    width: 65px;
-    height: 65px;
-}
-
 .img_article {
     width: 419px;
     height: 279px;
@@ -18,42 +13,6 @@ a {
     object-fit:contain;
 }
 
-div.name {
-    width: 12%;
-    height: 65px;
-    margin: 10px;
-    margin-left: 0;
-    line-height: 65px;
-    font-size: 32px; 
-    text-align: center;
-    font-family: Nanum Gothic;
-}
-
-body {
-    margin: 0; /* body의 기본마진을 없애줍니다(선택사항) */
-    font-family: sans-serif;
-}
-header {
-    margin: 0 auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
-    width: 1080px;
-    height: 85px;
-    display: flex;
-}
-nav {
-    margin: 0 auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
-    margin-bottom: 40px;
-    width: 1080px;
-    height: 280px;
-    border: dotted #BDBDBD;
-    display: flex;
-}
-section {
-    margin: 0 auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
-    width: 1080px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 div.article_picture{
     width: 419px;
     height: 279px;
@@ -100,13 +59,6 @@ div.article_abstract{
     border: dotted #BDBDBD;
 }
 
-footer {
-    margin: 0 auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
-    width: 1080px;
-    height: 65px;
-    margin-top: 20px;
-    border-top: 2px solid #000000;
-}
 div.side1{
     margin: 0 auto;
     width: 180px;

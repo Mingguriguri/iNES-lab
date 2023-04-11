@@ -1,5 +1,8 @@
 	/* CSS 스타일링 */
-
+  body {
+    width: 1120px;
+    margin: 0 auto;
+  }
     * {
         font-family: 'Georgia', sans-serif;
     }
@@ -64,12 +67,11 @@
     }
     .header {
         display: flex;
+        margin-bottom: 10px;
         flex-direction: row;
         align-items: center;
         clear: both;
-        padding: 20px;
         text-align: center;
-
     }
 
 

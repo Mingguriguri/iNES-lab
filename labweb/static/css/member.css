@@ -21,17 +21,6 @@ a {
     height: 100%;
     object-fit: contain;
 }
-
-body {
-    margin: 0; /* body의 기본마진을 없애줍니다(선택사항) */
-    font-family: sans-serif;
-}
-header {
-    margin: 0 auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
-    width: 1080px;
-    height: 85px;
-    display: flex;
-}
 nav {
     margin: 0 auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
     width: 1080px;
@@ -45,10 +34,10 @@ aside {
 }
 section {
     margin: 0 auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
-    width: 1080px;
+    width: 1120px;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
 }
 
 article {
@@ -56,13 +45,6 @@ article {
     width: 1080px;
     height: 600px;
     display: flex;
-}
-footer {
-    margin: 0 auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
-    width: 1080px;
-    height: 65px;
-    margin-top: 20px;
-    border-top: 2px solid #000000;
 }
 div.side1{
     margin: 0 auto;
@@ -136,7 +118,7 @@ div.menu {
 }
 div.midMember{
     margin: 0 auto; 
-    width: 1080px;
+    width: 1120px;
     height: 67px;
     line-height: 65px;
     display: flex;
@@ -167,7 +149,7 @@ ul.ulnav > li {
 }
 ul.mem {
     margin: 0; /* 위아래 margin 없이 */
-    width: 1080px;
+    width: 1120px;
     height: 65px;
     font-size: 32px;
     line-height: 65px;
