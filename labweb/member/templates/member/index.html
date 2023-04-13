@@ -8,63 +8,63 @@
   <body>
     <!--네비게이션 바-->
     <div class="header">
-        <div class="logoimg">
-            <img src="static/example_logo.png">
-        </div>
-        <h1 class="mainnav">iNES</h1>
-        <ul class="navbar">  
-            <li><a href="file:///C:/Users/rlaal/Desktop/iNES%20Webpage/main.html">HOME</a></li>
-            <li><a href="#">TEAM</a></li>
-            <li><a href="file:///C:/Users/rlaal/Desktop/iNES%20Webpage/publications.html">RESEARCH</a></li>
-            <li><a href="#">GALLERY</a></li>
-            <li><a href="https://kojungbeom.github.io/">BLOG</a></li>
-        </ul>
+      <div class="logoimg">
+          <img src="/static/brain.png">
+      </div>
+      <h1 class="mainnav">iNES</h1>
+      <ul class="navbar">  
+          <li><a href="file:///C:/Users/rlaal/Desktop/iNES%20Webpage/main.html">HOME</a></li>
+          <li><a href="#">TEAM</a></li>
+          <li><a href="file:///C:/Users/rlaal/Desktop/iNES%20Webpage/publications.html">RESEARCH</a></li>
+          <li><a href="#">GALLERY</a></li>
+          <li><a href="https://kojungbeom.github.io/">BLOG</a></li>
+      </ul>
     </div>
 	
 <!--대표 이미지 부분-->
 
     <div class="main-image-section">
-       <img src="static/example2.jpg">
+       <img src="/static/example2.jpg">
     </div>
-    <div class="contents">
     <div class="midMember">
       <ul class="mem">MEMBER</ul>
     </div>
-    <section>
-      {% if member_list %}
-        {% for member in member_list %}
-        <div class="icon2">
-          <a href="/" class="img_member"><img src={{member.ID_photo_path_text}}/></a>
-          <div class="nameTag">{{member.name_text}}</div>
-        </div>
-        {% endfor %}
-      {% endif %}
-    </section>
+    <div class="contents">
+      <div class=member_section>
+        {% if member_list %}
+          {% for member in member_list %}
+          <div class="photo">
+            <a href="/" class="img_member"><img src={{member.ID_photo_path_text}}/></a>
+            <div class="nameTag">{{member.name_text}}</div>
+          </div>
+          {% endfor %}
+        {% endif %}
+      </div>
     </div>
   </body>
   <!--footer-->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h3>iNES AI team</h3>
-                    <p>Address: 1234 Main Street, City Name, Country</p>
-                    <p>Phone: (123) 456-7890</p>
-                    <p>Email: info@company.com</p>
-                </div>
+  <div class="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col">
+                  <h3>iNES AI team</h3>
+                  <p>Address: 1234 Main Street, City Name, Country</p>
+                  <p>Phone: (123) 456-7890</p>
+                  <p>Email: info@company.com</p>
+              </div>
 
-                <div class="col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                    <li><a href="file:///C:/Users/rlaal/Desktop/iNES%20Webpage/main.html">HOME</a></li>
-                    <li><a href="#">TEAM</a></li>
-                    <li><a href="file:///C:/Users/rlaal/Desktop/iNES%20Webpage/publications.html">RESEARCH</a></li>
-                    <li><a href="#">GALLERY</a></li>
-                    <li><a href="https://kojungbeom.github.io/">BLOG</a></li>
-                    </ul>
-                </div>
-            </div>            
-        </div> 
-    </div>
+              <div class="col">
+                  <h3>Quick Links</h3>
+                  <ul>
+                  <li><a href="file:///C:/Users/rlaal/Desktop/iNES%20Webpage/main.html">HOME</a></li>
+                  <li><a href="#">TEAM</a></li>
+                  <li><a href="file:///C:/Users/rlaal/Desktop/iNES%20Webpage/publications.html">RESEARCH</a></li>
+                  <li><a href="#">GALLERY</a></li>
+                  <li><a href="https://kojungbeom.github.io/">BLOG</a></li>
+                  </ul>
+              </div>
+          </div>            
+      </div> 
+  </div>
 </html>
   

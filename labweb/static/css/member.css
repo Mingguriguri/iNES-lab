@@ -21,132 +21,35 @@ a {
     height: 100%;
     object-fit: contain;
 }
-nav {
-    margin: 0 auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
-    width: 1080px;
-    height: 280px;
-    display: flex;
-}
-aside {
-    width: 220px;
-    height: 260px;
-    margin: 10px;
-}
-section {
-    margin: 0 auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
+
+.member_section {
     width: 1120px;
+    gap: 40px;
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
 }
-
-article {
-    margin: 0 auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
-    width: 1080px;
-    height: 600px;
-    display: flex;
-}
-div.side1{
-    margin: 0 auto;
-    width: 180px;
-    height: 20px;
-    margin: 10px;
-    padding: 0px;
-    line-height: 20px;
-    font-size: 20px; 
-    text-align: center;
-    font-family: Nanum Gothic;
-}
-div.side2{
-    width: 180px;
-    height: 210px;
-    margin: 10px;
-    line-height: 40px;
-    border: dotted #BDBDBD;
-    font-family: Nanum Gothic;
-}
-
-div.icon1{
-    width: 840px;
-    height: 260px;
-    margin: 10px;
-    line-height: 260px;
-    font-size: 20px; 
-    text-align: center;
-}
-div.icon11{
-    width: 830px;
-    height: 20px;
-    margin: 10px;
-    line-height: 20px;
-    font-size: 20px; 
-    text-align: center;
-}
-div.icon2{
+.photo{
     width: 340px;
     height: 340px;
-    padding: 0;
-    font-size: 20px; 
     text-align: center;
     float: left;
     border: dotted #BDBDBD;
 }
-div.logo {
-    width: 8%;
-    height: 65px;
-    margin: 10px;
-    line-height: 65px;
-    font-size: 20px; 
-    text-align: center;
-}
-div.name {
-    width: 12%;
-    height: 65px;
-    margin: 10px;
-    margin-left: 0;
-    line-height: 65px;
-    font-size: 32px; 
-    text-align: center;
-    font-family: Nanum Gothic;
-}
-div.menu {
-    width: 79%;
-    height: 67px;
-    margin: 10px;
-    margin-left: 0;
-    font-family: Nanum Gothic;
-}
-div.midMember{
+.midMember{
     margin: 0 auto; 
     width: 1120px;
     height: 67px;
     line-height: 65px;
-    display: flex;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-div.nameTag{
+.nameTag{
     margin: 0 auto; 
     width: 300px;
     height: 70px;
     line-height: 70px;
 }
-ul.ulnav {
-    margin: 0; /* 위아래 margin 없이 */
-    height: 65px;
-    align-items: center;
-    display: flex;
-    border-top: 2px solid #000000;
-    border-bottom: 2px solid #000000;
-}
-ul.ulnav > li {
-    /*border: thick dotted #f44336;*/
-    text-align: center;
-    width: 140px;
-    font-size: 20px; 
-    display: inline-block; 
-    border: thick dotted rgba(0, 0, 0, 0.0);;
-}
+
 ul.mem {
     margin: 0; /* 위아래 margin 없이 */
     width: 1120px;
