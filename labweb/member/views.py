@@ -5,7 +5,7 @@ from .models import member_list
 
 def index(request):
     members = member_list.objects.all()
-    template = loader.get_template('member/index.html')
+    template = loader.get_template('../templates/labweb/member.html')
     context = {
         'member_list': members
     }

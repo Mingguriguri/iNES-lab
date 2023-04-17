@@ -6,7 +6,7 @@ from .models import article_list
 # Create your views here.
 def index(request):
     articles = article_list.objects.all()
-    template = loader.get_template('projects/index.html')
+    template = loader.get_template('../templates/labweb/projects.html')
     context = {
         'article_list': articles
     }

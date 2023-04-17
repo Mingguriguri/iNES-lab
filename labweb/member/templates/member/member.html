@@ -1,0 +1,23 @@
+
+{% extends '../../templates/labweb/base.html' %}
+
+
+{% block style %}
+  <link rel="stylesheet" href="/static/css/member.css">
+{% endblock %}
+
+{% block content %}
+  <div class="midMember">
+    <ul class="mem">MEMBER</ul>
+  </div>
+  <div class=member_section>
+  {% if member_list %}
+    {% for member in member_list %}
+    <div class="photo">
+      <a href="/" class="img_member"><img src={{member.ID_photo_path_text}}/></a>
+      <div class="nameTag">{{member.name_text}}</div>
+    </div>
+    {% endfor %}
+  {% endif %}
+{% endblock %}  
+	
