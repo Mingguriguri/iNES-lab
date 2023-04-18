@@ -1,27 +1,48 @@
 
 {% extends 'labweb/base.html' %}
 
-
 {% block style %}
-  <link rel="stylesheet" href="/static/css/member.css">
+  <style>
+    .card-img-top {
+      height: 300px; /* set the height of the image container */
+      object-fit: cover; /* crop and scale the image to fit the container */
+    }
+    .card-img-top:hover {
+      content: url(/static/brain.png);
+    }
+  </style>
 {% endblock %}
 
 {% block content %}
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-3">
-      {% if member_list %}
-        {% for member in member_list %}
-          <div class="col mb-3">
-            <div class="card">
-              <img src="{{member.ID_photo_path_text}}" class="card-img-top" style="min-width: 100%; width: auto; height: auto;" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">{{member.name_text}}</h5>
-                <p class="card-text">{{member.name_text}}</p>
-              </div>
-            </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img class="card-img-top" src="/static/images/members/1.jpg" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">Member 1</h4>
+            <p class="card-text">Some example text.</p>
           </div>
-        {% endfor %}
-      {% endif %}
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img class="card-img-top" src="/static/images/members/2.jpg" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">Member 2</h4>
+            <p class="card-text">Some example text.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img class="card-img-top" src="/static/images/members/3.jpg" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">Member 3</h4>
+            <p class="card-text">Some example text.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-{% endblock %}  
+  {% endblock %}  
