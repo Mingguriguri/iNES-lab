@@ -3,25 +3,35 @@
 
 
 {% block style %}
-  <link rel="stylesheet" href="/static/css/member.css">
+<style>
+  .card-link{
+    color: black;
+    font-weight: bolder;
+  }
+</style>
+
 {% endblock %}
 
 {% block content %}
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-3">
-      {% if member_list %}
-        {% for member in member_list %}
-          <div class="col mb-3">
-            <div class="card">
-              <img src="{{member.ID_photo_path_text}}" class="card-img-top" style="min-width: 100%; width: auto; height: auto;" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">{{member.name_text}}</h5>
-                <p class="card-text">{{member.name_text}}</p>
-              </div>
-            </div>
+    <ul class="border-top border-bottom border-dark mt-2 md-2 p-0" style="width: 100%; text-align:center">
+      <li style=" display:inline-block;"><h3>Publications</h3></li>
+    </ul>
+    <div>
+      {% if Publication_list %}
+        {%for pub in Publication_list%}
+        <div class="card  border-0">
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: bold;">{{pub.pub_name}}</h5>
+            <p class="card-text">{{pub.pub_author}}, {{ pub.pub_dates|date:"F Y" }}. </p>
+            <a href="#" class="card-link">paper</a>
+            <a href="#" class="card-link">link</a>
           </div>
+        </div>
+
         {% endfor %}
       {% endif %}
     </div>
   </div>
+  
 {% endblock %}  

@@ -3,20 +3,22 @@
 
 
 {% block style %}
-  <link rel="stylesheet" href="/static/css/member.css">
 {% endblock %}
 
 {% block content %}
   <div class="container">
+    <ul class="border-top border-bottom border-dark mt-2 md-2 p-0" style="width: 100%; text-align:center">
+      <li style=" display:inline-block;"><h3>Gallery</h3></li>
+    </ul>
     <div class="row row-cols-1 row-cols-md-3">
-      {% if member_list %}
-        {% for member in member_list %}
+      {% if Gallery %}
+        {% for photo in Gallery %}
           <div class="col mb-3">
             <div class="card">
-              <img src="{{member.ID_photo_path_text}}" class="card-img-top" style="min-width: 100%; width: auto; height: auto;" alt="...">
+              <img src="{{photo.photo_path}}" class="card-img-top" style="min-width: 100%; width: auto; height: auto;" alt="...">
               <div class="card-body">
-                <h5 class="card-title">{{member.name_text}}</h5>
-                <p class="card-text">{{member.name_text}}</p>
+                <h5 class="card-title">{{photo.photo_title}}</h5>
+                <p class="card-text">{{photo.photo_context}}, {{ photo.photo_dates|date:"F Y" }}. </p>
               </div>
             </div>
           </div>
