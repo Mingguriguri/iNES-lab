@@ -3,25 +3,60 @@
 
 
 {% block style %}
-  <link rel="stylesheet" href="/static/css/member.css">
+  <link rel="stylesheet" href="/static/css/contact.css">
 {% endblock %}
 
 {% block content %}
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-3">
-      {% if member_list %}
-        {% for member in member_list %}
-          <div class="col mb-3">
-            <div class="card">
-              <img src="{{member.ID_photo_path_text}}" class="card-img-top" style="min-width: 100%; width: auto; height: auto;" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">{{member.name_text}}</h5>
-                <p class="card-text">{{member.name_text}}</p>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      {% endif %}
-    </div>
+    <div class="innerwrap">
+		
+			<section class="section1 clearfix">
+				<div class="textcenter">
+					<ul class="border-top border-bottom border-dark mt-2 md-2 p-0" style="width: 100%; text-align:center">
+            <li style=" display:inline-block;"><h3>Contact Us</h3></li>
+          </ul>
+					<h1>Drop Us a Mail</h1>
+				</div>
+			</section>
+      
+			<section class="section2 clearfix">
+        <!--map-->
+				<div class="col2 column1 first">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7532.825919828153!2d127.12815716303282!3d37.45686949773996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca9223b7f1c5f%3A0x91acd5ebf975573b!2z6rCA7LKc64yA7ZWZ6rWQIEFpIOqzte2Vmeq0gA!5e0!3m2!1sko!2skr!4v1681380392546!5m2!1sko!2skr" 
+                    width="600" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+        <!--address + email-->
+				<div class="col2 column2 last">
+					<div class="sec2innercont">
+						<div class="sec2addr">
+							<p>Gachon University, AI Department. 1342 Seongnamdaero, Sujeonggu, Seongnam,. Gyeonggido 13120, Republic of Korea.
+                            </p>
+							<p><span class="collig">Phone :</span> +82-32-820-4253(수정해야할듯요)</p>
+							<p><span class="collig">Email :</span> Jungsuk@gachon.ac.kr</p>
+							<p><span class="collig">Fax :</span> +82-32-820-4449</p>
+						</div>
+					</div>
+				  <div class="sec2contactform">
+						<h3 class="sec2frmtitle">Want to Know More? Drop Us a Mail</h3>
+						<form action="">
+							<div class="clearfix">
+								<input class="col2 first" type="text" placeholder="FirstName">
+								<input class="col2 last" type="text" placeholder="LastName">
+							</div>
+							<div class="clearfix">
+								<input  class="col2 first" type="Email" placeholder="Email">
+								<input class="col2 last" type="text" placeholder="Contact Number">
+							</div>
+							<div class="clearfix">
+								<textarea name="textarea" id="" cols="30" rows="7">Your message here...</textarea>
+							</div>
+							<div class="clearfix"><input type="submit" value="Send"></div>
+						</form>
+					</div>
+
+				</div>
+			</section>
+		
+		</div>
   </div>
 {% endblock %}  
