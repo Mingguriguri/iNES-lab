@@ -14,8 +14,6 @@ def index(request):
     context = {
         'article_list': articles
     }
-    template = loader.get_template('../templates/labweb/projects.html')
-
     return HttpResponse(template.render(context, request))
 
 def detail(request, article_id):
