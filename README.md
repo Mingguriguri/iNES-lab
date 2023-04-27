@@ -1,2 +1,2 @@
 # iNES-LAB
-b This is our Lab web page
+This is our Lab web page
