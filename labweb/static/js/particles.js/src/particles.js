@@ -116,8 +116,12 @@ var Particles = (function(window, document) {
     }
 
     _.element = document.querySelector(_.options.selector);
-    _.context = _.element.getContext('2d');
-
+    // element가 null인 경우에 대한 예외 처리
+    if (_.element === null) {
+      console.error('Element not found');
+    } else {
+      _.context = _.element.getContext('2d'); 
+    }
     devicePixelRatio = window.devicePixelRatio || 1;
     backingStoreRatio = _.context.webkitBackingStorePixelRatio || _.context.mozBackingStorePixelRatio || _.context.msBackingStorePixelRatio ||
                         _.context.oBackingStorePixelRatio || _.context.backingStorePixelRatio || 1;

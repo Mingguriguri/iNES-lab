@@ -3,10 +3,25 @@
 
 
 {% block style %}
+
 <style>
+  @font-face{
+    font-family: 'Big Caslon Medium';
+    src: url('../fonts/Big Caslon Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
   .card-link{
     color: black;
     font-weight: bolder;
+  }
+  .card-body p, a{
+    line-height: 1.0; /* 줄간격 값 조정 */
+  }
+  .container {
+    font-family: "Big Caslon Medium", sans-serif;
+
   }
 </style>
 
@@ -19,16 +34,21 @@
     </ul>
     <div>
       {% if Publication_list %}
-        {%for pub in Publication_list%}
-        <div class="card  border-0">
-          <div class="card-body">
-            <h5 class="card-title" style="font-weight: bold;">{{pub.pub_name}}</h5>
-            <p class="card-text">{{pub.pub_author}}, {{ pub.pub_dates|date:"F Y" }}. </p>
-            <a href="#" class="card-link">paper</a>
-            <a href="#" class="card-link">link</a>
+        {%for year in years%}
+          <div class="year">
+            <h4 style="font-weight: bold"> {{year}}</h4>
           </div>
-        </div>
-
+          {%for pub in Publication_list%}
+            {% if pub.year == year %}
+            <div class="card  border-0" style="padding-left: 80px;" >
+              <div class="card-body">
+                <p class="card-title" style="font-weight: bold; font-size:18px;">{{pub.pub_name}}</p>
+                <p class="card-text">{{pub.pub_author}}, <span style="font-style: italic">{{pub.pub_publisher}}</span>, {{ pub.pub_dates| date:"F Y"}}. </p>
+                <a href="{{pub.pub_pdf_path}}" class="card-link">[link]</a>
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
         {% endfor %}
       {% endif %}
     </div>

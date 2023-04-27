@@ -25,5 +25,6 @@ urlpatterns = [
     path('gallery/', include('gallery.urls')),
     path('publication/', include('publication.urls')),
     path('history/', include('history.urls')),
+    path('awards/', include('awards.urls')),
     path('admin/', admin.site.urls),
 ]

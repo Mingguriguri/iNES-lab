@@ -1,0 +1,48 @@
+
+{% extends 'labweb/base.html' %}
+
+
+{% block style %}
+
+<style>
+  @font-face{
+    font-family: 'Big Caslon Medium';
+    src: url('../fonts/Big Caslon Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .card-img-top {
+      object-fit: cover; /* crop and scale the image to fit the container */
+    }
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="container">
+    <ul class="border-top border-bottom border-dark mt-2 md-2 p-0" style="width: 100%; text-align:center">
+      <li style=" display:inline-block;"><h3> Award-Winning </h3></li>
+    </ul>
+    <div class="row">
+      {% if award_list %}
+          {%for award in award_list%}
+          <div class="col-md-4 mb-4" style="padding: 10px; ">
+            <div class="card">
+              <a href="{{award.award_photo_path}}" class="mx-auto"><img src="{{award.award_photo_path}}" class="card-img-top" style="max-width: 300px;" alt="..."></a>
+              <div class="card-body">
+                <h5 class="card-title">{{award.awards_title}}</h5>
+                <p class="card-text">{{award.awrad_contents}}</p>
+                <p class="card-text"><small class="text-muted">{{award.award_dates|date:"d F Y"}}</small></p>
+              </div>
+            </div>
+          </div>
+        
+          
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+  
+{% endblock %}  
