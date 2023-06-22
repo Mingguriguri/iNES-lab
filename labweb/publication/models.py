@@ -8,3 +8,5 @@ class Publication_list(models.Model):
     pub_publisher = models.CharField(max_length=200, blank = True, null = True)
     pub_pdf_path= models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.pub_name

@@ -1,96 +1,125 @@
+<!-- NEW version -->
+<!--Version 23.5.31-->
+<!-- 23.6.15 -->
+<!-- 23.6.18 -->
 <head>
+  {%load static %}
+
+    <link rel="stylesheet" href="/static/css/navi.css">
     <link rel="stylesheet" href="/static/css/home2.css">
+
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Raleway:ital,wght@0,700;1,300;1,800&family=Roboto+Mono&display=swap" rel="stylesheet">
+        
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-   
-    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
     <script src="/static/js/particles.js/src/particles.js"></script>
     <script src="/static/js/home.js"></script>
 
+    <style>
+      @font-face {
+          font-family: 'BookkMyungjo-Bd';
+          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+          font-weight: 700;
+          font-style: normal;
+      }
+  </style>
 </head>
 <body>
- 
-
-        <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-            <a class="navbar-brand" href="#">iNES</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <!-- HOME -->
-                <li class="nav-item active">
-                  <a class="nav-link" href="/home/#">Home <span class="sr-only">(current)</span></a>
-                </li>
-           
-                <!--About US-->
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                    About Us
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/member/#">People</a>
-                    <a class="dropdown-item" href="/history/#">History</a>
-                    <a class="dropdown-item" href="#">AI team Blog</a>
-                  </div>
-                </li>
-
-                <!--Research-->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                      Research
-                    </a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Research Topic</a>
-                      <a class="dropdown-item" href="/projects/">Project</a>
-                    </div>
-                </li>
-
-                <!--Publications-->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                        Publications
-                    </a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Conference</a>
-                      <a class="dropdown-item" href="/publication/#">Journal</a>
-                    </div>
-                </li>
-
-                <!--Board-->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                        Board
-                    </a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="/awards/#">Award</a>
-                      <a class="dropdown-item" href="/gallery/#">GAllery</a>
-                    </div>
-                </li>
-
-                <!--Contact Us-->
-                <li class="nav-item">
-                    <a class="nav-link" href="contact/#/">Contact Us</a>
-                  </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-        <section class="title">
-            <h1>iNES</h1>
-            <h3 class="span loader">
-                <span class="m">Intelligent</span><br>
-                <span class="m">Nano-Bio</span><br>
-                <span class="m">Electronic</span><br>
-                <span class="m">System</span>
-                
-            </h3>
-            
-        </section>
+        <section class="title" >
+          <div class="container px-lg-5 " style="display: flex; flex-direction: column; ">
+            <div class="row row-cols-1">
+                <div class="col">
+                    <div class="row mx-lg-n5">
+                        <div class="col-7 py-1 px-lg-2" style="width: auto; display: flex;justify-content: flex-end;">
+                          <h1>iNES</h1>
+                        </div>
+                       
+          
+                        <div class="col-1 d-flex justify-content-center " style="width:100%">
+                          <div class="row row-cols-1 " style="width: min-content;">
+                              <div class="col " style="display: flex; align-items: flex-end;">
+                                  <nav class="menu" style="display: inline-block; display: flex; flex-direction: column; justify-content: center;" >
+                                      <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open-1"/>
+                                      <label class="menu-open-button" for="menu-open-1">
+                                          AI
+                                      </label>
+          
+                                      <a href="/member/#" class="menu-item"> <i class="fa fa-solid fa-user" ></i></a>
+                                      <a href="/projects/#" class="menu-item"> Proj </a>
+                                      <a href="/publication/#" class="menu-item"> Pub</a>
+                                      <a href="/gallery/#" class="menu-item"><i class="fa fa-solid fa-trophy"></i></a>
+                                      <a href="#" class="menu-item"><i class="fa fa-solid fa-envelope"></i></a>    
+                                  </nav>   
+                              </div>
+                              <div class="col" style="display: flex; align-items: flex-start;">
+                                  <nav class="menu" style="display: inline-block;">
+                                      <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open-2"/>
+                                      <label class="menu-open-button" for="menu-open-2">
+                                          HW
+                                      </label>
         
-        <canvas class="background"></canvas>
+                                      <a href="#" class="menu-item"> <i class="fa fa-solid fa-user" ></i></a>
+                                      <a href="#" class="menu-item"> Proj </a>
+                                      <a href="#" class="menu-item"> Pub</a>
+                                      <a href="#" class="menu-item"><i class="fa fa-solid fa-trophy"></i></a>
+                                      <a href="#" class="menu-item"><i class="fa fa-solid fa-envelope"></i></a>       
+                                  </nav>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
 
+                </div>
+                <div class="col">
+                    <h3 class="span loader">
+                        <span class="m">Click </span><br>
+                        <span class="m">'AI' or 'HW'</span><br>
+                        <span class="m">for more info. </span><br>
+
+                        <span class="m"></span><br>
+                        <span class="m">Intelligent</span><br>
+                        <span class="m">Nano-Bio</span><br>
+                        <span class="m">Electronic</span><br>
+                        <span class="m">System</span>
+                      
+                    </h3>
+                </div>
+    
+              </div>
+            
+          </div>
+      </section>
+     
+        <!-- filters -->
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+            <filter id="shadowed-goo">
+                
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+                <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+                <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+                <feComposite in2="shadow" in="goo" result="goo" />
+                <feComposite in2="goo" in="SourceGraphic" result="mix" />
+            </filter>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feComposite in2="goo" in="SourceGraphic" result="mix" />
+            </filter>
+            </defs>
+        </svg>
+      
+    
+      <canvas class="background"></canvas>
 
 </body>  
