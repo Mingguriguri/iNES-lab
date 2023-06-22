@@ -7,4 +7,5 @@ class Gallery(models.Model):
     photo_context = models.CharField(max_length=100)
     photo_path = models.CharField(max_length=100, default="/static/brain.png")
 
-    
+    def __str__(self):
+        return self.photo_title

@@ -7,3 +7,5 @@ class member_list(models.Model):
     ID_photo_path_text = models.CharField(max_length=100)
     second_photo_path = models.CharField(max_length=100, default="/static/brain.png")
     
+    def __str__(self):
+        return self.name_text

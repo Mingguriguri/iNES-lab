@@ -8,4 +8,5 @@ class article_list(models.Model):
     article_abstract = models.CharField(max_length=1500)
     article_photo_path = models.CharField(max_length=100)
 
-
+    def __str__(self):
+        return self.article_name
