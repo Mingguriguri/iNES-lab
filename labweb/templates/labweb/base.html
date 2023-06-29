@@ -31,32 +31,67 @@
   </head>
   <body>
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="/home/#">
-          <img src="/static/brain.png" width="30" height="30" class="d-inline-block align-top" alt="">
-          INES
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/home/#">iNES</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav border-top border-bottom border-dark" style="width: 100%;">
-            <li class="nav-item text-center" style="width: 20%;">
-              <a class="nav-link" href="/home/#">Home <span class="sr-only">(current)</span></a>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item text-center" style="width: 20%;">
-              <a class="nav-link" href="/member/#">TEAM</a>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                ABOUT US
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/member/#">People</a></li>
+                <li><a class="dropdown-item" href="/history/#">History</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://kojungbeom.github.io/">iNES Blog</a></li>
+              </ul>
             </li>
-            <li class="nav-item text-center" style="width: 20%;">
-              <a class="nav-link" href="/projects/#">RESEARCH</a>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                  RESEARCH
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Research Topic</a></li>
+                  <li><a class="dropdown-item" href="/projects/#">Project</a></li>
+                </ul>
+              </li>
+
+            
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/publication/journal" role="button" data-toggle="dropdown" aria-expanded="false">
+               PUBLICATION
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/publication/journal">Journal</a></li>
+                <li><a class="dropdown-item" href="/publication/conference">Conference</a></li>
+            </ul>
             </li>
-            <li class="nav-item text-center" style="width: 20%;">
-              <a class="nav-link" href="/gallery/#">GALLERY</a>
-            </li>
-            <li class="nav-item text-center" style="width: 20%;">
-              <a class="nav-link" href="https://kojungbeom.github.io/">BLOG</a>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                  BOARDS
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/awards/#">Award</a></li>
+                  <li><a class="dropdown-item" href="/gallery/#">Gallery</a></li>
+    
+                </ul>
             </li>
           </ul>
+          <form class="d-flex">
+            <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
         </div>
       </nav>
 

@@ -11,75 +11,21 @@
     <ul class="border-top border-bottom border-dark mt-2 md-2 p-0" style="width: 100%; text-align:center">
       <li style=" display:inline-block;"><h3>iNES HISTORY</h3></li>
     </ul>
-    <font color=#000></font color=#000></h1>
         <section class= "timeline">
           <ul>
+          {% if historys %}
+            {% for h in historys %}
             <li>
-              <div>
-              <time> 2019 </time>
-              <img src="/static/images/history/Kim.jpg" alt="Prof.kim" style="width:150px;height:100px">
-              iNES was born 
-              </div>
-            </li>
-            <li>
-              <div>
-              <time> 2019.03 </time>
-              <img src="/static/images/history/car.jpg" alt="car" style="width:150px;height:100px;">
-              ADAS project started
-              </div>
-            </li>
-            <li>
-              <div>
-              <time> 2020 </time>
-               ADAS project finshed
-              </div>
-            </li>
-            <li>
-              <div>
-              <time> 2020.03 </time>
-              ADAS project ended
-              </div>
-            </li>
-              <li>
-              <div>
-              <time> 2021 </time>
-              <img src="/static/images/history/sound.jpg" alt="voice" style="width:150px;height:100px;">
-              Sound Recognition Table
-              </div>
-            </li>
-            <li>
-              <div>
-              <time> 2021.03 </time>
-              EDDY 개발
-              </div>
-            </li>
-            <li>
-              <div>
-              <time> 2021.10 </time>
-                산림수종 빅데이터 경진대회 <b><i>은상</i></b> 수상
-              </div>
-            </li>
-            <li>
-              <div>
-              <time> 2022 </time>
-              <img src="/static/images/history/golf.jpg" alt="golf" style="width:150px;height:100px;">
-                GOLF BALL PROJECT
-              </div>
-            </li>
-            <li>
-              <div>
-              <time> 2022.03 </time>
-              GOLF BALL started
-              </div>
-            </li>
-            <li>
-              <div>
-              <time> 2022.12 </time>
-               MATLAB AI CHALLENGE <font color=red>1st</font color=red>
-              </div>
-            </li>
-            <script src="/static/js/history.js"> </script> 
-          </ul>
-          </section>>
+                  <div>
+                    <time> {{h.history_dates|date:"Y.m"}}</time>{{h.history_title}}
+                    <!-- <img src="{{h.history_photo_path}}"  style="width:150px;height:100px;"> -->
+                  </div>
+                </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+    </section>
   </div>
+  <script src="/static/js/history.js"> </script> 
+
 {% endblock %}  

@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class History(models.Model):
     history_title = models.CharField(max_length=100)
     history_dates = models.DateTimeField(blank = True, null = True)
