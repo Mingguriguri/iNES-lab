@@ -4,6 +4,7 @@
 
 {% block style %}
   <style>
+    
     .card-img-top {
       height: 300px; /* set the height of the image container */
       object-fit: cover; /* crop and scale the image to fit the container */
@@ -13,8 +14,8 @@
     }
   </style>
 {% endblock %}
-
 {% block content %}
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <div class="container">
     <ul class="border-top border-bottom border-dark mt-2 md-2 p-0" style="width: 100%; text-align:center">
@@ -27,8 +28,13 @@
             <div class="card">
                 <img class="card-img-top" src="{{member.ID_photo_path_text}}" alt="Card image" style="--hover-image: url({{member.second_photo_path}})">
               <div class="card-body">
-                <h4 class="card-title">{{member.name_text}}</h4>
-                <p class="card-text">{{member.one_sentence_text}}</p>
+                <h4 class="card-title" style="display: inline-block; ">{{member.name_text}}</h4>
+                <h6 class="card-text" style="display: inline-block; color:gray;">{{member.degree}}</h6>
+                <p class="card-text" style="font-weight:bold; ">{{member.one_sentence_text}}</p>
+                <hr class="dropdown-divider">
+                <p class="card-text"><i class="fa fa-solid fa-envelope"></i>      {{member.email}}</p>
+                  
+
               </div>
             </div>
           </div>
@@ -36,4 +42,6 @@
       {% endif %}
     </div>
   </div>
+  <script src="https://example.com/fontawesome/v5.15.4/js/all.js" data-auto-a11y="true" ></script>
+
 {% endblock %}  

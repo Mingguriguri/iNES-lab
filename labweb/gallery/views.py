@@ -7,10 +7,10 @@ from .models import Gallery
 
 
 def index(request):
-    photos = Gallery.objects.all()
+    photos = Gallery.objects.all().order_by('-photo_dates')
 
     template = loader.get_template('../templates/labweb/gallery.html')
     context = {
-            'photos': Gallery
+            'Gallery': photos
         }
     return HttpResponse(template.render(context, request))
