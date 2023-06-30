@@ -29,3 +29,7 @@ def detail(request, article_id):
     }
     
     return HttpResponse(template.render(context, request))
+
+def topic(request):
+    template = loader.get_template('../templates/labweb/research_topic.html')
+    return HttpResponse(template.render({}, request))
