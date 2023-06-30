@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.index, name='projects'),
     # ex: /projects/name
     path('<int:article_id>/', views.detail, name="detail"), 
+    path('topic/', views.topic, name='topic'),
 ]
