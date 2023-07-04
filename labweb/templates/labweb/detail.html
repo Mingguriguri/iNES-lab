@@ -19,19 +19,19 @@
 			<header class="py-7">
                 
                 <a href="/projects/#" class="fw-700 text-decoration-none mb-3 mt-3 d-inline-block"> <i class="fa fa-arrow-left"></i> All posts</a>
-                <h1 class="headline" style="font-weight: 600;"> {{article.article_name}}</h1>
+                <h1 class="headline" style="font-weight: 700;"> {{article.article_name}}</h1>
 
-                <div class="row" style="width: auto; display: inline-block;">
-                    <div class="col" style="display: flex; justify-content: center;">
-                        <p class="article-tags" style="margin-top: 1.5em; display: flex;">
+                <div class="row" style="width: auto; " >
+                    <div class="col-md-10" style="display: flex; justify-content: left;  align-items: center;">
+                        <p class="article-tags" style="margin-top: 1.5em; display: flex; justify-content: center;">
                             {% for keyword in keywords %}
-                            <span class="tag rounded-pill me-2 fw-700 bg-white shadow-lg py-2 px-3 small">{{ keyword }}</span>
+                            <span class="tag rounded-pill me-2 fw-700 bg-white shadow-lg py-2 px-3 small mr-2" >{{ keyword }}</span>
                             {% endfor %}
                         </p>
                     </div>
-                    <div class="col" style="width: auto; display: flex; align-items: stretch;">
-                        <div class="link-buttons" style="display: inline-block; display: flex; justify-content: center; margin-right: 0px;">
-                            <ul class="wrapper">
+                    <div class="col-md-2 d-flex align-items-start mr-0  "  style="width: min-content; justify-content: right;">
+                        <div class="link-buttons d-flex justify-content-center">
+                            <ul class="wrapper d-flex align-items-start">
             
                                 <li class="icon github" >
                                     <span class="tooltip">Github</span>
@@ -122,12 +122,10 @@
 	</div>
 </div>
 
-<div class="position-fixed bottom-0 end-0 m-4 z-index-master">
-	<a href="https://toruskit.com" class="d-inline-block strong text-white text-decoration-none bg-black bg-opacity-80 p-3 btn-arrow">Made with <strong class="text-decoration-underline">Torus Kit</strong></a>
-</div>
+
 <script src="https://example.com/fontawesome/v5.15.4/js/all.js" data-auto-a11y="true" ></script>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    
+     -->
 {% endblock %}  

@@ -29,10 +29,13 @@
                 <img class="card-img-top" src="{{member.ID_photo_path_text}}" alt="Card image" style="--hover-image: url({{member.second_photo_path}})">
               <div class="card-body">
                 <h4 class="card-title" style="display: inline-block; ">{{member.name_text}}</h4>
-                <h6 class="card-text" style="display: inline-block; color:gray;">{{member.degree}}</h6>
+                <h6 class="card-text" style="display: inline-block; color:gray; font-size: 1em;">{{member.degree}}</h6>
+                <p class="card-text" style="font-size: 0.9em; ">{{member.department}}</p>
+                <hr class="dropdown-divider">
+
                 <p class="card-text" style="font-weight:bold; ">{{member.one_sentence_text}}</p>
                 <hr class="dropdown-divider">
-                <p class="card-text"><i class="fa fa-solid fa-envelope"></i>      {{member.email}}</p>
+                <p class="card-text" style="font-size: 0.9em;"><i class="fa fa-solid fa-envelope"></i>      {{member.email}}</p>
                   
 
               </div>
