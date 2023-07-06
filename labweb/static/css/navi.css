@@ -20,7 +20,7 @@
     /* background: #9f9183; */
     background: #fff;;
     border-radius: 40%;
-    width: 100px;
+    width: 80px;
     height: 50px;
     /* margin-left: -40px;
     position: absolute;
@@ -108,23 +108,23 @@
 }
  .menu-open:checked ~ .menu-item:nth-child(3) {
 	 transition-duration: 170ms;
-	 transform: translate3d(100px, 0, 0);
+	 transform: translate3d(80px, 0, 0);
 }
  .menu-open:checked ~ .menu-item:nth-child(4) {
 	 transition-duration: 250ms;
-	 transform: translate3d(200px, 0, 0);
+	 transform: translate3d(160px, 0, 0);
 }
  .menu-open:checked ~ .menu-item:nth-child(5) {
 	 transition-duration: 330ms;
-	 transform: translate3d(300px, 0, 0);
+	 transform: translate3d(240px, 0, 0);
 }
  .menu-open:checked ~ .menu-item:nth-child(6) {
 	 transition-duration: 410ms;
-	 transform: translate3d(400px, 0, 0);
+	 transform: translate3d(320px, 0, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(7) {
     transition-duration: 490ms;
-    transform: translate3d(500px, 0, 0);
+    transform: translate3d(400px, 0, 0);
 }
 
 
