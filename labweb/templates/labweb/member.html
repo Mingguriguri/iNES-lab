@@ -17,13 +17,40 @@
 {% block content %}
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-  <div class="container">
-    <ul class="border-top border-bottom border-dark mt-2 md-2 p-0" style="width: 100%; text-align:center">
-      <li style=" display:inline-block;"><h3>Members</h3></li>
-    </ul>
+  <div class="container py-5">
+    <header class="text-center">
+      <br><br><br>
+      <h1 class="display-4 font-weight-bold">Member</h1>
+      <p class="font-italic text-muted mb-0">Let me introduce the research topic of our lab. We study Network AI that can be used in real life.</p>
+    </header>
+    
     <div class="row">
+      <div style="padding: 5px;">
+        <button type="button" class="btn btn-light"><a href="{% url 'filter_by_degree' %}" style="color: black; font-weight:500; text-decoration: none;"> All</a> </button>
+
+      
+      </div>
+      
+
+      {% if degrees %}
+      {% for degree in degrees %}
+        <div style="padding: 5px;">
+          <button type="button" class="btn btn-light"><a href="{% url 'filter_by_degree' %}?degree={{degree}}" style="color: black; font-weight:500; text-decoration: none;"> {{degree}}</a></button>
+        </div>
+      
+      {% endfor %}
+      
+      <div style="clear: both;">
+        <h3 >{{selected_degree}}</h3>
+      </div>
+      
+      {%endif%}
+      <hr/>
+      <br><br>
+      
       {% if member_list %}
         {% for member in member_list %}
+      
           <div class="col-md-4 mb-4">
             <div class="card">
                 <img class="card-img-top" src="{{member.ID_photo_path_text}}" alt="Card image" style="--hover-image: url({{member.second_photo_path}})">
