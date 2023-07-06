@@ -18,14 +18,15 @@
 }
  .menu-item, .menu-open-button {
     /* background: #9f9183; */
-    background: #332e28;;
+    background: #fff;;
     border-radius: 40%;
     width: 100px;
     height: 50px;
     /* margin-left: -40px;
     position: absolute;
     top: 20px; */
-    color: white;
+    color: #6099b0;
+	font-weight: 700;
     text-align: center;
     line-height: 80px;
     transform: translate(-50%, -50%) scale(0);
