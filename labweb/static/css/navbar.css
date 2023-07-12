@@ -21,27 +21,14 @@ body{
         rgba(255,255,255,0.5) 50%,
         rgba(255,255,255,0.75) 75%,
         rgba(255,255,255,1) 100%
-    ), url('/static/images/home.jpeg'); 
+    ), url('/static/images/home2.jpeg'); 
 	background-position: center bottom ;
 	background-repeat: no-repeat;
-	background-size: 100% 70%;
+	background-size: 100% 50%;
 	background-color: #fff;
 	overflow-x: hidden;
 }
 
-    /* background-image: linear-gradient(
-        to top,
-        rgba(255,255,255,0) 10%,
-        rgba(255,255,255,0.25) 25%,
-        rgba(255,255,255,0.5) 50%,
-        rgba(255,255,255,0.75) 75%,
-        rgba(255,255,255,1) 100%
-    ), url('/static/images/home.jpeg');
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: 100% 70%;
-    background-color: #fff;
-    overflow-x: hidden; */
 
 ::selection {
 	color: #fff;

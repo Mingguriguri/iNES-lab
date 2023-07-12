@@ -10,11 +10,8 @@
 
 
 body {
-	background: #ffffff;
-	color: #333;
 	font-weight: normal;
 	font-size: 1em;
-	font-family: 'Roboto', Arial, sans-serif;
 }
 
 input:focus, textarea:focus, keygen:focus, select:focus {
@@ -33,9 +30,7 @@ input:focus, textarea:focus, keygen:focus, select:focus {
 
 
 /* Contact Form Styling */
-.container {
-	padding: 0 50px 70px;
-}
+
 .textcenter {
 	text-align: center;
 }

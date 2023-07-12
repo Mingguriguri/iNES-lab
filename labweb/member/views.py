@@ -7,9 +7,9 @@ from .models import member_list
 
 # 사용자 정의 정렬
 def degree_weight(degree):
-    if degree == 'Ph.D':
+    if degree == 'Advisor':
         return 1
-    elif degree.startswith('Master'):
+    elif degree.startswith('Professor'):
         return 2
     elif degree =='Ph.D. student':
         return 3

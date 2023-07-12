@@ -1,12 +1,25 @@
-/* ---- particles.js config ---- */
+/* -----------------------------------------------
+/* How to use? : Check the GitHub README
+/* ----------------------------------------------- */
 
-particlesJS("particles-js", {
+/* To load a config file (particles.json) you need to host this demo (MAMP/WAMP/local)... */
+/*
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('particles.js loaded - callback');
+});
+*/
+
+/* Otherwise just put the config content (json): */
+
+particlesJS('particles-js',
+  
+  {
     "particles": {
       "number": {
-        "value": 380,
+        "value": 166,
         "density": {
           "enable": true,
-          "value_area": 800
+          "value_area": 1105
         }
       },
       "color": {
@@ -16,7 +29,7 @@ particlesJS("particles-js", {
         "type": "circle",
         "stroke": {
           "width": 0,
-          "color": "#000000"
+          "color": "#ff0000"
         },
         "polygon": {
           "nb_sides": 5
@@ -28,17 +41,17 @@ particlesJS("particles-js", {
         }
       },
       "opacity": {
-        "value": 0.5,
+        "value": 0.13,
         "random": false,
         "anim": {
           "enable": false,
           "speed": 1,
-          "opacity_min": 0.1,
+          "opacity_min": 0.12,
           "sync": false
         }
       },
       "size": {
-        "value": 3,
+        "value": 0.3,
         "random": true,
         "anim": {
           "enable": false,
@@ -49,10 +62,10 @@ particlesJS("particles-js", {
       },
       "line_linked": {
         "enable": true,
-        "distance": 150,
-        "color": "#ffffff",
-        "opacity": 0.4,
-        "width": 1
+        "distance": 200,
+        "color": "#626270",
+        "opacity": 0.3,
+        "width": 0.8
       },
       "move": {
         "enable": true,
@@ -61,7 +74,6 @@ particlesJS("particles-js", {
         "random": false,
         "straight": false,
         "out_mode": "out",
-        "bounce": false,
         "attract": {
           "enable": false,
           "rotateX": 600,
@@ -78,13 +90,13 @@ particlesJS("particles-js", {
         },
         "onclick": {
           "enable": true,
-          "mode": "push"
+          "mode": "repulse"
         },
         "resize": true
       },
       "modes": {
         "grab": {
-          "distance": 140,
+          "distance": 180,
           "line_linked": {
             "opacity": 1
           }
@@ -97,7 +109,7 @@ particlesJS("particles-js", {
           "speed": 3
         },
         "repulse": {
-          "distance": 200,
+          "distance": 150,
           "duration": 0.4
         },
         "push": {
@@ -108,26 +120,15 @@ particlesJS("particles-js", {
         }
       }
     },
-    "retina_detect": true
-  });
-  
-  
-  /* ---- stats.js config ---- */
-  
-  var count_particles, stats, update;
-  stats = new Stats;
-  stats.setMode(0);
-  stats.domElement.style.position = 'absolute';
-  stats.domElement.style.left = '0px';
-  stats.domElement.style.top = '0px';
-  document.body.appendChild(stats.domElement);
-  count_particles = document.querySelector('.js-count-particles');
-  update = function() {
-    stats.begin();
-    stats.end();
-    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    "retina_detect": true,
+    "config_demo": {
+      "hide_card": false,
+      "background_color": "#b61924",
+      "background_image": "",
+      "background_position": "50% 50%",
+      "background_repeat": "no-repeat",
+      "background_size": "cover"
     }
-    requestAnimationFrame(update);
-  };
-  requestAnimationFrame(update);
+  }
+
+);
