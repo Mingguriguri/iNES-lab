@@ -11,20 +11,26 @@ window.onload = function () {
   };
   const particles = Particles.init({
     selector: ".background",
-    color: ["#c0b7ae", "#cbc4bc", "#cbc4bc"],
+    color: ["#C5DFF8", "#4A55A2", "#C5DFF8"],
     connectParticles: true,
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: 800,
         options: {
-          color: ["#cbc4bc", "#03dac6", "#ff0266"],
-          maxParticles: 45,
+          color: ["#faebd7", "#03dac6", "#ff0266"],
+          maxParticles: 43,
           connectParticles: false
         }
       }
     ]
   });
-  
+  $(document).ready(function(){
+    $('.dropdown').hover(function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown(150);
+    }, function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp(105);
+    });
+  });
   class NavigationPage {
     constructor() {
       this.currentId = null;

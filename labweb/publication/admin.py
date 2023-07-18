@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Publication_list
+from .models import Journal, Conference
 
 # Register your models here.
-admin.site.register(Publication_list)
+admin.site.register(Journal)
+admin.site.register(Conference)

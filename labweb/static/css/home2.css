@@ -1,61 +1,115 @@
+
 @font-face{
-    font-family: 'Big Caslon Medium';
-    src: url('../fonts/Big Caslon Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
+  font-family: 'Big Caslon Medium';
+  src: url('../fonts/Big Caslon Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'Ubuntu';
+  src: url('../fonts/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'Poppins';
+  src: url('../fonts/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* #Primary
+================================================== */
+
+
+::selection {
+	color: #fff;
+	background-color: #1e295d;
+}
+::-moz-selection {
+	color: #fff;
+	background-color: #1e295d;
+}
+
+
   * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+    /* .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      width: auto !important;
+  } */
     body {
-      font-family: "Big Caslon Medium", sans-serif;
-      font-size: 15px;
+      /* font-family: 'Poppins', sans-serif !important; */
+      /* font-size: 15px;
+      line-height: 24px; */
+      overflow: hidden;
+      height: 100%;
       position: relative;
      }
     
      .title{
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
         position: relative;
-        background-color: whitesmoke;
-        text-align: center;
+        /* background-color: whitesmoke; */
+        background-color: #001628;
+        /* background-color: #C5DFF8; */
+
         padding: 0 2em;
+      }
+  
+      p{
+        display: inline-block !important;
       }
 
       .title h1{
         font-family: "Big Caslon Medium", sans-serif;
+        display: inline-block !important;
         font-size: 5vw;
         margin: 0;
         padding-bottom: 0.5rem;
         letter-spacing: 0.5rem;
-        color: #332e28;
+        color: #fff;
         transition: all 0.3s ease;
         z-index: 3;
+        text-align: right !important;
+        display:flex;
       }
+    
+      .header-row {
+        position: relative !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: start !important;
+        width: 100%;
+        padding: 50px; /* 이 값을 조정해서 원하는 간격을 만들 수 있습니다 */
+        
+      }
+    
+    
       h1:hover {
         transform: translate3d(0, -10px, 22px);
-        color: #ff0266;
+        color: #ffbf3d;
       }
       
       h3.span {
         font-size: 2vw;
         letter-spacing: 0.6em;
-        font-family: "Big Caslon Medium", sans-serif;
         font-weight: 300;
         color: #332e28;
         z-index: 4;
+        text-align: center;
       }
-      span:hover {
-        color: #ff0266;
-        font-weight: 500;
-        font-size: 2.2vw;
+
+      .m2 {
+        font-size: 1.5vw !important;
+        letter-spacing: 0.5em;
       }
       
       a {
@@ -71,11 +125,11 @@
         z-index: -1;
       }
       .container {
-        position: fixed;
+        font-family: "Ubuntu", sans-serif;
+        position: relative;
         top: 0;
         width : 100%;
         z-index:50;
-        font-family: "Big Caslon Medium", sans-serif;
       }
 
       @media (min-width: 800px) {
@@ -91,6 +145,13 @@
           font-size: 3vw;
         }
       }
+
+      @media (max-width: 800px) {
+        .dropdownmenu a {
+          font: bold 16px/24px sans-serif;
+        }
+      }
+      
       
       @media only screen and (min-width: 360px) {
         .title h1 {
@@ -116,8 +177,8 @@
         z-index: 0;
       }
       .loader span {
-        color: #faebd7;
-        text-shadow: 0 0 0 #faebd7;
+        color: #b0ccd8;
+        text-shadow: 0 0 0 #b0ccd8;
         animation: loading 1s ease-in-out infinite alternate;
       }
       
@@ -125,8 +186,8 @@
      /* =============particle=================*/ 
     @keyframes loading {
       to {
-        text-shadow: 20px 0 70px #9f9183;
-        color: #332e28;
+        text-shadow: 20px 0 70px #ffdf9e;
+        color: #ffbf3d;
       }
     }
     .loader span:nth-child(2) {
