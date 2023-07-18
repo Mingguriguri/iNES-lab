@@ -209,8 +209,116 @@
         </button>
       </div> -->
       <!--<img src="/static/car.jpg" class="img-fluid mx-auto d-block" alt="Responsive image" style="width: 100%;">-->
-    {% block content %}
+    
+    
+     {% block content %}
     {% endblock %}  
+
+    <!--아예 투명한 게 나은지, 배경 있는 게 나은지?-->
+  <div class="footer-wrap bg-dark"> 
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md-3">
+          <h1 style="color: whitesmoke;">iNES Labatory</h1>
+        </div>
+        <div class="col-6 col-md-5">
+          <h5 style="color: whitesmoke;">Contact</h5>
+          <ul class="list-unstyled text-small">
+            <li class="text-muted" style="font-size:medium; display: flex; align-items: baseline;" >
+              <span style="padding-right: 10px; "><i class="fas fa-map-marker-alt text-muted" ></i></span> 
+              <p class="text-muted">경기 성남시 수정구 복정동 495, 가천대학교 AI공학관 203호</p>
+            </li>
+            <li class="text-muted" style="font-size:medium; display: flex; align-items: baseline;" >
+              <span style="padding-right: 10px;"><i class="fas fa-phone-alt text-muted"></i></span> 
+              <p class="text-muted"> (+82) 032-820-4253</p>
+            </li>
+            <li class="text-muted" style="font-size:medium; display: flex; align-items: baseline;" >
+              <span style="padding-right: 10px;"><i class="fas fa-print text-muted"></i></span> 
+              <p class="text-muted"> (+82) 032-820-4449</p>
+            </li>
+            <li class="text-muted" style="font-size:medium; display: flex; align-items: baseline;" >
+              <span style="padding-right: 10px;"><i class="fas fa-paper-plane text-muted"></i></span> 
+              <p class="text-muted"> Jungsuk@gachon.ac.kr</p>
+            </li>
+          </ul>
+        </div>
+      
+        <div class="col-6 col-md-2">
+          <h5 style="color: whitesmoke;">About Us</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="/member/filter">Member</a></li>
+            <li><a class="text-muted" href="/history/#">History</a></li>
+            <li><a class="text-muted" href="/awards/#">Award</a></li>
+            <li><a class="text-muted" href="/gallery/#">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h5 style="color: whitesmoke;">Publication</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="/projects/topic">Research Topic</a></li>
+            <li><a class="text-muted" href="/projects/#">Project</a></li>
+            <li><a class="text-muted" href="/publication/journal">Journal</a></li>
+            <li><a class="text-muted" href="/publication/conference">Conference</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <small class="d-block mb-3 text-muted" style="text-align: center; margin-top: 10px;">&copy; Copyright, 2023, iNES Labatory, Gachon University</small>
+
+    </footer>
+    </div>
+    
+    <!-- <div class="footer-wrap "> 
+      <footer class="container py-5">
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <h1>iNES Labatory</h1>
+          </div>
+          <div class="col-6 col-md-5">
+            <h5 ">Contact</h5>
+            <ul class="list-unstyled text-small">
+              <li class="text-muted" style="font-size:medium; display: flex; align-items: baseline;" >
+                <span style="padding-right: 10px; "><i class="fas fa-map-marker-alt text-muted" ></i></span> 
+                <p class="text-muted">경기 성남시 수정구 복정동 495, 가천대학교 AI공학관 203호</p>
+              </li>
+              <li class="text-muted" style="font-size:medium; display: flex; align-items: baseline;" >
+                <span style="padding-right: 10px;"><i class="fas fa-phone-alt text-muted"></i></span> 
+                <p class="text-muted"> (+82) 032-820-4253</p>
+              </li>
+              <li class="text-muted" style="font-size:medium; display: flex; align-items: baseline;" >
+                <span style="padding-right: 10px;"><i class="fas fa-paper-plane text-muted"></i></span> 
+                <p class="text-muted"> Jungsuk@gachon.ac.kr</p>
+              </li>
+              <li class="text-muted" style="font-size:medium; display: flex; align-items: baseline;" >
+              <span style="padding-right: 10px;"><i class="fas fa-paper-plane text-muted"></i></span> 
+              <p class="text-muted"> Jungsuk@gachon.ac.kr</p>
+            </li>
+            </ul>
+          </div>
+        
+          <div class="col-6 col-md-2">
+            <h5 >About Us</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="/member/filter">Member</a></li>
+              <li><a class="text-muted" href="/history/#">History</a></li>
+              <li><a class="text-muted" href="/awards/#">Award</a></li>
+              <li><a class="text-muted" href="/gallery/#">Gallery</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2">
+            <h5>Publication</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="/projects/topic">Research Topic</a></li>
+              <li><a class="text-muted" href="/projects/#">Project</a></li>
+              <li><a class="text-muted" href="/publication/journal">Journal</a></li>
+              <li><a class="text-muted" href="/publication/conference">Conference</a></li>
+            </ul>
+          </div>
+        </div>
   
+        <small class="d-block mb-3 text-muted" style="text-align: center; margin-top: 10px;">&copy; Copyright, 2023, iNES Labatory, Gachon University</small>
+  
+      </footer>
+      </div> -->
   </body>
 </html>
