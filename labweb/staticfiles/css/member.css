@@ -1,0 +1,36 @@
+.card-img-top:hover{
+    opacity: 1;
+  }
+  .card-img-top {
+    height: 300px; /* set the height of the image container */
+    object-fit: cover; /* crop and scale the image to fit the container */
+  }
+  .card-img-top:hover {
+    content: var(--hover-image);
+  }
+
+.degree-button a {
+    color: rgb(123, 123, 123);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.degree-button:hover {
+    border-color: black !important;
+    
+}
+
+.degree-button:hover .degree-link {
+    text-decoration: none;
+    color: black;
+}
+
+.degree-button:hover,
+.button.active {
+  background: #7ea338;
+  color: white;
+}
+.degree-button:visited {
+  background: #7ea338;
+  color: white;
+}
