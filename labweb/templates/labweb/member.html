@@ -17,9 +17,10 @@
   <div class="container py-5">
     <header class="text-center">
       <br><br><br> <br><br><br>
-      <h1 class="display-4 font-weight-bold">Member</h1>
+      <h1 class="display-4 font-weight-bold">People</h1>
       <p class="font-italic text-muted mb-0">Let me introduce the member of our lab. </p>
       <br><br><br>
+      <h3 class="display-7 font-weight-bold">Member</h3>
     
     <div class="row">
       <div style="padding: 5px;">
@@ -42,48 +43,58 @@
       {% endfor %}
       
       {%endif%} -->
-      {% if degrees %}
-      {% for degree in degrees %}
+
+      {% if degree_choices %}
+      {% for degree_abbr, degree_name  in degree_choices %}
           <div style="padding: 5px;">
-              <button type="button" class="btn btn-light degree-button" id="button" onclick="change_btn(event)">
-                  <a href="{% url 'filter_by_degree' %}?degree={{degree}}" class="degree-link">
-                      {{degree}}
-                  </a>
-              </button>
-          </div>
+            <button type="button" class="btn btn-light degree-button" id="button" onclick="change_btn(event)">
+                <a href="{% url 'filter_by_degree' %}?degree={{ degree_abbr }}" class="degree-link">
+                    {{ degree_name }}
+                </a>
+            </button>
+         </div>
         {% endfor %}
     {% endif %}
   
 
       <hr/>
-      <br><br>
-      
+      <br><br>      <br><br><br>
+
+
       {% if member_list %}
+      
+
         {% for member in member_list %}
+        {% if member.status == "CU" %}
         <!-- border-style: none; -->
           <div class="card mb-3 ml-2 mr-2" style="width:550px; border-style: none; box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.1); "> 
             <div class="row no-gutters" style="display: flex; align-items: center; justify-content: center; ">
               <div class="col-lg-4">
-                <img class="card-img-top" src="{{member.ID_photo_path_text}}" alt="Card image" style="max-height: 200px; width: 150px; --hover-image: url({{member.second_photo_path}})">
+                <img class="card-img-top" src="{{member.main_photo_path_text}}" alt="Card image" style="max-height: 200px; width: 150px; --hover-image: url({{member.hobby_photo_path}})">
               </div>
               <div class="col-lg-8">
                 <div class="card-body">
                   <!-- <h4 class="card-title" style="justify-content: left; display: inline;">{{member.name_text}}</h4>
                   <p style="justify-content: left; display: inline; text-align: left;"><span class="badge badge-dark">{{member.degree}}</span></p> -->
-                  <h3 class="card-title" style="text-align: left; font-weight: 800;">{{member.name_text}}</h3>
-                  <h5 style="text-align: left;"><span class="badge badge-dark">{{member.degree}}</span></h5>
+                  <h3 class="card-title" style="text-align: left; font-weight: 800;">{{member.name}}</h3>
+                  <h5 style="text-align: left;"><span class="badge badge-dark">{{member.get_status_display}}</span> <span class="badge badge-dark">{{member.get_degree_display}} </span> </h5>
+                  <h5 style="text-align: left;"></h5>
                   <p class="card-text" style="font-size: 0.9em; text-align: left;">{{member.department}}</p>
                   <hr class="dropdown-divider">
 
-                  <p class="card-text" style="text-align: left;"><i class="fa fa-solid fa-comment"></i>&nbsp&nbsp{{member.one_sentence_text}}</p>
+                  <p class="card-text" style="text-align: left;"><i class="fa fa-solid fa-comment"></i>&nbsp&nbsp{{member.motto}}</p>
                   <p class="card-text" style="font-size: 1em; text-align: left;"><i class="fa fa-solid fa-envelope"></i>&nbsp&nbsp{{member.email}}</p>
                     
                 </div>
               </div>
             </div>
           </div>
+          {% endif %}
         {% endfor %}
-      {% endif %}
+        {% endif %}
+
+        <br><br><br>
+
     </div>
   </div>
   <script src="https://example.com/fontawesome/v5.15.4/js/all.js" data-auto-a11y="true" ></script>

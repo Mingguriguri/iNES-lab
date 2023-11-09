@@ -58,7 +58,7 @@
         height: 100vh;
         position: relative;
         /* background-color: whitesmoke; */
-        background-color: #001628;
+        background-color: #ffffff;
         /* background-color: #C5DFF8; */
 
         padding: 0 2em;
@@ -75,7 +75,7 @@
         margin: 0;
         padding-bottom: 0.5rem;
         letter-spacing: 0.5rem;
-        color: #fff;
+        color: #1e295d;
         transition: all 0.3s ease;
         z-index: 3;
         text-align: right !important;
