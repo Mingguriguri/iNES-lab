@@ -6,7 +6,7 @@ from django.shortcuts import render #new added
 from .models import member_list
 
 # 사용자 정의 정렬
-'''
+
 def degree_weight(degree):
     if degree == 'Co-Advisor':
         return 1
@@ -18,7 +18,7 @@ def degree_weight(degree):
         return 4
     else:
         return 5
-'''
+
 def index(request):
     members = member_list.objects.all()
     
