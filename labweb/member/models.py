@@ -17,7 +17,7 @@ class member_list(models.Model):
         ('CU', 'Current'),
         ('AL', 'Alumni'),
     ]
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, default="Name")
     email = models.EmailField(max_length=254, default="@gachon.ac.kr")
     main_photo_path_text = models.CharField(max_length=100)
     hobby_photo_path = models.CharField(max_length=100, default="/static/brain.png")
