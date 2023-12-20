@@ -25,6 +25,9 @@ STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 
 # collectstatic 명령을 실행했을 때 정적 파일들이 저장될 경로
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# MEDIA
+#MEDIA_URL = '/uploade/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
 
 #STATICFILES_FINDERS = ['django.contrib.staticfiles.finders.FileSystemFinder',]
 
@@ -135,3 +138,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
