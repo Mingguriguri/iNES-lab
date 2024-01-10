@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'demo.apps.DemoConfig',
     'gallery.apps.GalleryConfig',
-    'history.apps.HistoryConfig',
+    #'history.apps.HistoryConfig',
     'publication.apps.PublicationConfig',
     'area.apps.AreaConfig',
     'notice.apps.NoticeConfig',
