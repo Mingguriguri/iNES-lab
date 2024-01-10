@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'member.apps.MemberConfig',
     'projects.apps.ProjectsConfig',
     'project.apps.ProjectConfig',
+    'publications.apps.PublicationsConfig',
     'contact.apps.ContactConfig',
     'demo.apps.DemoConfig',
     'gallery.apps.GalleryConfig',
