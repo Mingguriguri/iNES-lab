@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'history.apps.HistoryConfig',
     'publication.apps.PublicationConfig',
     'area.apps.AreaConfig',
+    'notice.apps.NoticeConfig',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
