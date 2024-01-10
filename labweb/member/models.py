@@ -19,8 +19,8 @@ class member_list(models.Model):
     ]
     name = models.CharField(max_length=20, default="Name")
     email = models.EmailField(max_length=254, default="@gachon.ac.kr")
-    main_photo = models.FileField(upload_to="uploads/%Y/%m/%d/", blank=True)
-    hobby_photo = models.FileField(upload_to="uploads/%Y/%m/%d/", blank=True)
+    main_photo = models.FileField(upload_to="upload/%Y/%m/%d/", blank=True)
+    hobby_photo = models.FileField(upload_to="upload/%Y/%m/%d/", blank=True)
     main_photo_path_text = models.CharField(max_length=100)
     hobby_photo_path = models.CharField(max_length=100, default="/static/brain.png")
     motto = models.CharField(max_length=50, default="Good, better, best")

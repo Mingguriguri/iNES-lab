@@ -23,6 +23,7 @@ urlpatterns = [
     path('member/', include('member.urls')),
     path('projects/', include('projects.urls')),
     path('project/', include('project.urls')),
+    path('topic/', include('area.urls')),
     path('contact/', include('contact.urls')),
     path('demo/', include('demo.urls')),
     path('gallery/', include('gallery.urls')),
@@ -31,5 +32,7 @@ urlpatterns = [
     path('history/', include('history.urls')),
     path('awards/', include('awards.urls')),
     path('admin/', admin.site.urls),
-] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

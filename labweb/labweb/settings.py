@@ -26,8 +26,8 @@ STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 # collectstatic 명령을 실행했을 때 정적 파일들이 저장될 경로
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # MEDIA
-#MEDIA_URL = '/uploade/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
+MEDIA_URL = '/upload/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
 
 #STATICFILES_FINDERS = ['django.contrib.staticfiles.finders.FileSystemFinder',]
 
