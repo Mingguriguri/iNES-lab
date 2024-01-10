@@ -15,7 +15,7 @@ def degree_weight(degree):
     elif degree =='PhD':
         return 3
     elif degree =='Master':
-        return 4
+        return 4 
     else:
         return 5
 

@@ -50,6 +50,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'member.apps.MemberConfig',
     'projects.apps.ProjectsConfig',
+    'project.apps.ProjectConfig',
     'contact.apps.ContactConfig',
     'demo.apps.DemoConfig',
     'gallery.apps.GalleryConfig',
