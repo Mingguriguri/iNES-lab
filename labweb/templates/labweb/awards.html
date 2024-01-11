@@ -34,10 +34,10 @@
           {%for award in award_list%}
           <div class="col-md-4 mb-4" style="padding: 10px; ">
             <div class="card">
-              <a href="{{award.award_photo_path}}" class="mx-auto"><img src="{{award.award_photo_path}}" class="card-img-top" style="max-width: 300px;" alt="..."></a>
+              <a href="{{award.photo.url}}" class="mx-auto"><img src="{{award.photo.url}}" class="card-img-top" style="max-width: 300px;" alt="..."></a>
               <div class="card-body">
-                <h5 class="card-title">{{award.awards_title}}</h5>
-                <p class="card-text">{{award.awrad_contents}}</p>
+                <h5 class="card-title">{{award.title}}</h5>
+                <p class="card-text">{{award.contents}}</p>
                 <a href="{{award.award_link}}" class="card-link">
                   [link]
                 </a>
