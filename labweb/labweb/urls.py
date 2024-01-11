@@ -29,7 +29,7 @@ urlpatterns = [
     path('gallery/', include('gallery.urls')),
     path('publications/', include('publications.urls')),
     path('publication/', include('publication.urls')),
-    #path('history/', include('history.urls')),
+    path('history/', include('history_of_ines.urls')),
     path('awards/', include('awards.urls')),
     path('admin/', admin.site.urls),
 ] 
