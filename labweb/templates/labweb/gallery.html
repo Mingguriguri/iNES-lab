@@ -21,9 +21,9 @@
             <div class="card">
               <img src="{{photo.photo_path}}" class="card-img-top" style="min-width: 100%; width: auto; height: auto;" alt="...">
               <div class="card-body">
-                <h5 class="card-title">{{photo.photo_title}}</h5>
-                <p class="card-text">{{photo.photo_context}} </p>
-                <p class="card-text">{{photo.photo_dates|date:"Y-m-d"}} </p>
+                <h5 class="card-title">{{photo.title}}</h5>
+                <p class="card-text">{{photo.contents}} </p>
+                <p class="card-text">{{photo.upload_date|date:"Y-m-d"}} </p>
               </div>
             </div>
           </div>

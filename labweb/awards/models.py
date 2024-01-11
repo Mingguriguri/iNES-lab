@@ -1,12 +1,15 @@
 from django.db import models
+from member.models import member_list 
 
+import datetime
 # Create your models here.
 class Awards(models.Model):
-    awards_title = models.CharField(max_length=150)
-    award_dates = models.DateTimeField(blank = True, null = True)
-    awrad_contents = models.CharField(max_length=3000)
-    award_photo_path = models.CharField(max_length=100)
-    award_link = models.CharField(max_length=300, blank=True, null=True)
+    title = models.CharField(max_length=255)
+    award_dates = models.DateTimeField(default=datetime.datetime.now)
+    contents = models.TextField(blank=True, null=True)
+    photo = models.FileField(upload_to="upload/%Y/%m/%d/", blank=True)
+    award_link = models.URLField(blank=True, null=True)
+    member = models.ManyToManyField(member_list)
 
     def __str__(self):
         return self.awards_title
