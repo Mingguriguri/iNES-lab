@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage # 페이지네이셔
@@ -38,3 +38,23 @@ def notice_list(request):
         'custom_range': custom_range,
     }
     return HttpResponse(template.render(context, request))
+
+
+def notice_detail(request, notice_id):
+    notice = get_object_or_404(Notice, pk=notice_id)
+    try:
+        prev_notice = Notice.objects.filter(id__lt=notice_id).order_by('-id').first()
+    except Notice.DoesNotExist:
+        prev_notice = None
+
+    try:
+        next_notice = Notice.objects.filter(id__gt=notice_id).order_by('id').first()
+    except Notice.DoesNotExist:
+        next_notice = None
+    context = {
+        'notice': notice,
+        'prev_notice':prev_notice,
+        'next_notice':next_notice,
+    }
+
+    return render(request, '../templates/labweb/notice_detail.html', context)
