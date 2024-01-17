@@ -22,8 +22,8 @@
             {% for h in historys %}
             <li>
                   <div>
-                    <time> {{h.history_dates|date:"Y.m"}}</time>{{h.history_title}}
-                    <!-- <img src="{{h.history_photo_path}}"  style="width:150px;height:100px;"> -->
+                    <time> {{h.history_date|date:"Y.m"}}</time>{{h.title}}
+                    <!-- <img src="{{h.history.photo.url}}"  style="width:150px;height:100px;"> -->
                   </div>
                 </li>
             {% endfor %}

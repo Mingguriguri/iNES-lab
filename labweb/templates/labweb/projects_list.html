@@ -1,0 +1,39 @@
+{% extends 'labweb/base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <h1>Projects</h1>
+    <ul>
+        {% for project in projects %}
+        <li>
+            <h2>{{ project.name }}</h2>
+            <p>Description: {{ project.description }}</p>
+            <p>Start: {{ project.start_date }}</p>
+            <p>End: {{ project.end_date }}</p>
+            <p>Lead: {{ project.project_lead.name }}</p>
+            <p>Members: 
+                {% for member in project.members.all %}
+                    {{ member.name }},
+                {% endfor %}
+            </p>
+            <p>Areas: 
+                {% for area in project.areas.all %}
+                    {{ area.area_name }},
+                {% endfor %}
+            </p>
+            <p>Publications: 
+                {% for publication in project.publications.all %}
+                    {{ publication.pub_name }},
+                {% endfor %}
+            </p>
+            <p>Conferences: 
+                {% for conference in project.conferences.all %}
+                    {{ conference.conf_name }},
+                {% endfor %}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

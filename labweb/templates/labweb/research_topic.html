@@ -27,49 +27,19 @@
       <a href="/projects/#" class="fw-700 text-decoration-none mb-3 mt-3 d-inline-block" style="color: black; font-weight: 500;"> go to  posts <i class="fa fa-arrow-right"></i></a>
 
       <div class="row">
-        <!-- DEMO 1 Item-->
-        <div class="col-lg-6  m-0 p-0">
-          <div class="hover hover-1 text-white " style="overflow:hidden;"><img src="/static/images/research_topic/computer vision.jpg" alt="" style="width: 110%; height: 100%; object-fit: cover;">
-            <div class="hover-overlay"></div>
-            <div class="hover-1-content px-5 py-4">
-              <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Computer </span>Vision</h3>
-              <p class="hover-1-description font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-          </div>
-        </div>
-        <!-- DEMO 1 Item-->
-        <div class="col-lg-6 m-0 p-0" >
-          <div class="hover hover-1 text-white" style="overflow:hidden;"><img src="/static/images/research_topic/NLP3.jpg" alt="" style="width: 110%; height: 100%;  object-fit: cover;">
-            <div class="hover-overlay"></div>
-            <div class="hover-1-content px-5 py-4">
-              <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Natural Language </span>Processing</h3>
-              <p class="hover-1-description font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-          </div>
-        </div>
-   
-        
-         <!-- DEMO 1 Item-->
-         <div class="col-lg-6  m-0 p-0">
-          <div class="hover hover-1 text-white" style="overflow:hidden;"><img src="/static/images/research_topic/SP4.jpeg" alt="" style=" width: 110%; height: 100%;  object-fit: cover;">
-              <div class="hover-overlay"></div>
-              <div class="hover-1-content px-5 py-4">
-                <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Signal </span>Processing</h3>
-                <p class="hover-1-description font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <!-- DEMO 1 Items-->
+          {% for area in areas %}
+          <div class="col-lg-6  m-0 p-0">
+            <div class="hover hover-1 text-white" style="overflow:hidden;"><img src="{{area.photo.url}}" alt="" style="width: 110%; height: 100%;  object-fit: cover;">
+                <div class="hover-overlay"></div>
+                <div class="hover-1-content px-5 py-4">
+                  <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">{{area.area_name}}</h3>
+                  <p class="hover-1-description font-weight-light mb-0">{{area.area_description}}</p>
+                </div>
               </div>
             </div>
-          </div>
+          {% endfor %}
 
-           <!-- DEMO 1 Item-->
-         <div class="col-lg-6  m-0 p-0">
-          <div class="hover hover-1 text-white" style="overflow:hidden;"><img src="/static/images/research_topic/web2.jpg" alt="" style="width: 110%; height: 100%;  object-fit: cover;">
-              <div class="hover-overlay"></div>
-              <div class="hover-1-content px-5 py-4">
-                <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Database-driven </span>Web Service</h3>
-                <p class="hover-1-description font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-            </div>
-          </div>
 
       </div>
     </div>
