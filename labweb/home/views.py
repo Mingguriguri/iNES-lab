@@ -8,3 +8,10 @@ def index(request):
     context = {
     }
     return HttpResponse(template.render(context, request))
+
+
+def ver3(request):
+    template = loader.get_template('../templates/labweb/homev3.html')
+    context = {
+    }
+    return HttpResponse(template.render(context, request))

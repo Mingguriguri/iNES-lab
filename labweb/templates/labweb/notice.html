@@ -1,0 +1,66 @@
+
+{% extends 'labweb/base.html' %}
+
+
+{% block style %}
+
+<style>
+  @font-face{
+    font-family: 'Big Caslon Medium';
+    src: url('../fonts/Big Caslon Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .card-link{
+    color: black;
+    font-weight: bolder;
+  }
+  .card-body p, a{
+    line-height: 1.0; /* 줄간격 값 조정 */
+  }
+ 
+</style>
+
+{% endblock %}
+
+{% block content %}
+{% load humanize %}
+<div class="container py-5">
+    <header class="text-center">
+    <br><br><br><br><br><br>
+    <h1 class="display-4 font-weight-bold">Notice</h1>
+    <p class="font-italic text-muted mb-0">새로운 소식</p>
+    <br><br><br>
+  </header>
+    <div>
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date</th>
+            <th>Update</th>
+            <th>Read</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if notices %}
+          {%for notice in notices%}
+          <tr>
+            <td>1</td>
+            <td>{{notice.title}}</td>
+            <td>{{notice.author}}</td>
+            <td>{{notice.created_at|naturaltime}}</td>
+            <td>{{notice.updated_at|naturaltime}}</td>
+            <td>1</td>
+          </tr>
+          {% endfor %}
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+{% endblock %}  

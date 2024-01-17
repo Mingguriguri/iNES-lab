@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('home.urls')),
+    path('home/', include('home.urls')),
     path('member/', include('member.urls')),
     path('projects/', include('projects.urls')),
     path('project/', include('project.urls')),
@@ -31,6 +31,7 @@ urlpatterns = [
     path('publication/', include('publication.urls')),
     path('history/', include('history_of_ines.urls')),
     path('awards/', include('awards.urls')),
+    path('notices/', include('notice.urls')),
     path('admin/', admin.site.urls),
 ] 
 

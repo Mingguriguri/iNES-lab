@@ -41,8 +41,8 @@ SECRET_KEY = "django-insecure-@r)b+$dd#k^#_e+blqmke+ig3dp-sx%3h2&chr$ey(#!2(79x6
 DEBUG = True
 
 ALLOWED_HOSTS = [
-           ".ap-northeast-2.compute.amazonaws.com"
-           # "127.0.0.1"
+           #".ap-northeast-2.compute.amazonaws.com"
+            "127.0.0.1"
 ]
 
 # Application definition
@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "awards.apps.AwardsConfig",
+    'django.contrib.humanize', #날짜 템플릿
 ]
 
 MIDDLEWARE = [
