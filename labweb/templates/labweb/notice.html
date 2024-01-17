@@ -33,7 +33,8 @@
     <p class="font-italic text-muted mb-0">새로운 소식</p>
     <br><br><br>
   </header>
-    <div>
+  <div class="row mt-5">
+    <div class="col-12">
       <table class="table table-hover table-striped">
         <thead>
           <tr>
@@ -42,25 +43,76 @@
             <th>Author</th>
             <th>Date</th>
             <th>Update</th>
-            <th>Read</th>
           </tr>
         </thead>
         <tbody>
           {% if notices %}
           {%for notice in notices%}
           <tr>
-            <td>1</td>
+            <td>{{notice.id}}</td>
             <td>{{notice.title}}</td>
             <td>{{notice.author}}</td>
             <td>{{notice.created_at|naturaltime}}</td>
             <td>{{notice.updated_at|naturaltime}}</td>
-            <td>1</td>
           </tr>
           {% endfor %}
           {% endif %}
         </tbody>
       </table>
     </div>
+    
+   
+
   </div>
+   <!-- pagination -->
+   <div class="row mt-5">
+    <div class="col-12">
+      <nav aria-label="Page navigation example">
+       <ul class="pagination justify-content-center">
+        <!-- 이전 -->
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{page_obj.previous_page_number}}"> &#10094; Prev </a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="#"> &#10094;  Prev </a>
+          </li>
+        {% endif %}
+        
+        <!-- 현재 -->
+          <!-- <li class="page-item">
+            <a class="page-link" href="#">{{notices.number}} / {{ notices.paginator.num_pages }}</a>
+          </li>
+           -->
+       
+        {%for page in custom_range%}
+        {%if page == page_obj.number%}
+          <li class="page-item">
+            <a class="page-link" style="text-decoration:none; color: black;" href="?page={{page}}">{{page}}</a>
+          </li>
+        {%else%}
+        <li class="page-item">
+          <a class="page-link"  style="text-decoration:none; color: gray;" href="?page={{page}}">{{page}}</a>
+        </li>
+        {%endif%}
+        {%endfor%}
+        <!-- 이후 -->
+        {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next &#10095;</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Next &#10095;</a>
+          </li>
+        {% endif %}
+
+      </ul>
+     </nav>
+    </div>
+  </div>
+
+</div>
   
 {% endblock %}  
