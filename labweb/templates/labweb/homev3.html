@@ -6,7 +6,7 @@
     {%load static %}
   
       <link rel="stylesheet" href="/static/css/navi.css">
-      <link rel="stylesheet" href="/static/css/home2.css">
+      <link rel="stylesheet" href="/static/css/home3.css">
   
       <!--font-->
 
@@ -21,94 +21,35 @@
       <script src="/static/js/home.js"></script>
   
   </head>
-  <body>
-          <section class="title" >
-            <div class="container px-lg-5 " style="display: flex; flex-direction: column; ">
-              <div class="row row-cols-1">
-                  <div class="col" style="width: auto; display: inline-block;">
-                      <div class="row" style="display: flex; justify-content: center; ">
-                          <!-- <div class="col-1 py-1 px-lg-2" style="display: flex;justify-content: flex-end;"> -->
-                            <h1>iNES</h1>
-                          <!-- </div> -->
-                         
-            
-                          <!-- <div class="col-1 d-flex justify-content-center " style="width:100%"> -->
-                            <div class="row row-cols-1 " style="width: min-content; padding-left: 10px;">
-                                <div class="col " style="display: flex; align-items: flex-end;">
-                                    <nav class="menu" style="display: inline-block; display: flex; flex-direction: column; justify-content: center;" >
-                                        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open-1"/>
-                                        <label class="menu-open-button" for="menu-open-1">
-                                            AI
-                                        </label>
-            
-                                        <a href="/member/#" class="menu-item"> <i class="fa fa-solid fa-user" ></i></a>
-                                        <a href="/projects/#" class="menu-item"> Proj </a>
-                                        <a href="/publication/#" class="menu-item"> Pub</a>
-                                        <a href="/gallery/#" class="menu-item"><i class="fa fa-solid fa-trophy"></i></a>
-                                        <a href="#" class="menu-item"><i class="fa fa-solid fa-envelope"></i></a>    
-                                    </nav>   
-                                </div>
-                                <div class="col" style="display: flex; align-items: flex-start;">
-                                    <nav class="menu" style="display: inline-block;">
-                                        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open-2"/>
-                                        <label class="menu-open-button" for="menu-open-2">
-                                            HW
-                                        </label>
-          
-                                        <a href="#" class="menu-item"> <i class="fa fa-solid fa-user" ></i></a>
-                                        <a href="#" class="menu-item"> Proj </a>
-                                        <a href="#" class="menu-item"> Pub</a>
-                                        <a href="#" class="menu-item"><i class="fa fa-solid fa-trophy"></i></a>
-                                        <a href="#" class="menu-item"><i class="fa fa-solid fa-envelope"></i></a>       
-                                    </nav>
-                                </div>
-                              </div>
-                          <!-- </div> -->
-                        </div>
-  
-                  </div>
-                  <div class="col">
-                      <h3 class="span loader">
-                          <span class="m">Click </span><br>
-                          <span class="m">'AI' or 'HW'</span><br>
-                          <span class="m">for more info. </span><br>
-                      
-                          <span class="m m2"></span><br>
-                          <span class="m m2">Intelligent</span><br>
-                          <span class="m m2">Nano-Bio</span><br>
-                          <span class="m m2">Electronic</span><br>
-                          <span class="m m2">System</span>
-                      </h3>  
-                     
-                  </div>
-      
-                </div>
-              
-            </div>
-        </section>
-       
-          <!-- filters -->
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-              <defs>
-              <filter id="shadowed-goo">
-                  
-                  <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
-                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-                  <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
-                  <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
-                  <feOffset in="shadow" dx="1" dy="1" result="shadow" />
-                  <feComposite in2="shadow" in="goo" result="goo" />
-                  <feComposite in2="goo" in="SourceGraphic" result="mix" />
-              </filter>
-              <filter id="goo">
-                  <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
-                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-                  <feComposite in2="goo" in="SourceGraphic" result="mix" />
-              </filter>
-              </defs>
-          </svg>
-        
-      
-        <canvas class="background"></canvas>
-  
-  </body>  
+    <header>
+        <h1>우리 연구실</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">연구실 소개</a></li>
+                <li><a href="#research">연구 분야</a></li>
+                <li><a href="#news">최근 소식</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="about">
+        <h2>연구실 소개</h2>
+        <p>여기에 연구실에 대한 소개글을 적습니다.</p>
+    </section>
+    <section id="research">
+        <h2>연구 분야</h2>
+        <p>연구실에서 진행 중인 주요 연구 분야를 소개합니다.</p>
+    </section>
+    <section id="news">
+        <h2>최근 소식</h2>
+        <p>최근 연구실 소식 및 업데이트를 여기에 표시합니다.</p>
+    </section>
+    <section id="contact">
+        <h2>연락처</h2>
+        <p>연락처 정보를 여기에 적습니다.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 우리 연구실. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    </body>
