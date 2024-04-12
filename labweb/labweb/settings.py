@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     'project.apps.ProjectConfig',
     'publications.apps.PublicationsConfig',
     'contact.apps.ContactConfig',
-    'demo.apps.DemoConfig',
     'gallery.apps.GalleryConfig',
     'publication.apps.PublicationConfig',
     'area.apps.AreaConfig',
