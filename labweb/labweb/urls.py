@@ -25,7 +25,6 @@ urlpatterns = [
     path('project/', include('project.urls')), # 최근 
     path('topic/', include('area.urls')),
     path('contact/', include('contact.urls')),
-    path('demo/', include('demo.urls')),
     path('gallery/', include('gallery.urls')),
     path('publications/', include('publications.urls')),
     path('publication/', include('publication.urls')),
