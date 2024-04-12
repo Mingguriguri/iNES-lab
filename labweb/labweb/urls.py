@@ -19,10 +19,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('home/', include('home.urls')),
+    path('', include('home.urls')),
     path('member/', include('member.urls')),
-    path('projects/', include('projects.urls')),
-    path('project/', include('project.urls')),
+    path('projects/', include('projects.urls')), # 과거
+    path('project/', include('project.urls')), # 최근 
     path('topic/', include('area.urls')),
     path('contact/', include('contact.urls')),
     path('demo/', include('demo.urls')),
