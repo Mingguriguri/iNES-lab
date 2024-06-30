@@ -42,6 +42,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
             ".ines-lab.com",
+            ".www.ines-lab.com",
             ".ines-lab.gachon.ac.kr",
             ".ap-northeast-2.compute.amazonaws.com",
             "127.0.0.1"
