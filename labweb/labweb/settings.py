@@ -41,9 +41,10 @@ SECRET_KEY = "django-insecure-@r)b+$dd#k^#_e+blqmke+ig3dp-sx%3h2&chr$ey(#!2(79x6
 DEBUG = True
 
 ALLOWED_HOSTS = [
-           ".ines-lab.gachon.ac.kr",
-           ".ap-northeast-2.compute.amazonaws.com",
-           "127.0.0.1"
+            ".ines-lab.com",
+            ".ines-lab.gachon.ac.kr",
+            ".ap-northeast-2.compute.amazonaws.com",
+            "127.0.0.1"
 ]
 
 # Application definition
