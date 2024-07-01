@@ -17,9 +17,15 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import HttpResponse
+
+# 상태검사
+def health_check(request):
+    return HttpResponse("OK")
 
 urlpatterns = [
     path('', include('home.urls')),
+    path('health/', health_check), # 상태검사 확인 경로 지정
     path('member/', include('member.urls')),
     path('projects/', include('projects.urls')), # 과거
     path('project/', include('project.urls')), # 최근 
