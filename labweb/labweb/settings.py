@@ -41,10 +41,16 @@ SECRET_KEY = "django-insecure-@r)b+$dd#k^#_e+blqmke+ig3dp-sx%3h2&chr$ey(#!2(79x6
 DEBUG = True
 
 ALLOWED_HOSTS = [
-            ".ines-lab.com",
+            # 도메인
+            ".ines-lab.com",        
             ".www.ines-lab.com",
             ".ines-lab.gachon.ac.kr",
+            # 퍼블릭 IPv4 DNS
             ".ap-northeast-2.compute.amazonaws.com",
+            # 로드밸런서 & EC2 인스턴스 IP
+            "54.180.207.234",  # 로드밸런서의 퍼블릭 IP 또는 DNS
+             "172.31.13.26",     # EC2 인스턴스의 프라이빗 IP
+            # 로컬
             "127.0.0.1"
 ]
 
