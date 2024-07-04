@@ -79,8 +79,7 @@ INSTALLED_APPS = [
     'area.apps.AreaConfig',
     'notice.apps.NoticeConfig',
     'history_of_ines.apps.HistoryOfInesConfig',
-
-   
+    'advisor.apps.AdvisorConfig',
 ]
 
 MIDDLEWARE = [

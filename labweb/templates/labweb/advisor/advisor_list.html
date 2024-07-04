@@ -1,0 +1,101 @@
+{% extends 'labweb/base.html' %}
+
+{% block style %}
+<style>
+    .advisor-header {
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+    }
+    .advisor-info {
+        display: flex;
+        align-items: center;
+    }
+    .advisor-info img {
+        max-width: 150px;
+        margin-right: 20px;
+    }
+    .advisor-contact {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .advisor-contact p {
+        margin-right: 20px;
+    }
+    .section-title {
+        font-weight: bold;
+        color: black;
+    }
+    .badge-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .badge-container .badge {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <br><br><br><br><br><br>
+    <header class="text-center">
+        <h1 class="display-4 font-weight-bold">{{ team }} Team Advisors</h1>
+    </header>
+
+    <div class="row">
+        {% for advisor in advisors %}
+        <div class="col-md-12">
+            <div class="card mb-4 shadow-sm">
+                <div class="advisor-info">
+                    {% if advisor.photo %}
+                    <img src="{{ advisor.photo.url }}" class="card-img-top" alt="{{ advisor.name }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h2 class="advisor-header">{{ advisor.name }}, Ph.D.</h2>
+                        <p><strong>Affiliation:</strong> {{ advisor.affiliation }} &nbsp;&nbsp;&nbsp; <strong>Position:</strong> {{ advisor.position }}</p>
+                        <p><strong>Research Fields:</strong> {{ advisor.research_fields }}</p>
+                        <p><strong>Lab Location:</strong> {{ advisor.lab_location }}</p>
+                        <p><strong>Specialty:</strong> {{ advisor.specialty }}</p>
+                        <div class="advisor-contact mt-3">
+                            <p><i class="fas fa-phone"></i> {{ advisor.phone }}</p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:{{ advisor.email }}">{{ advisor.email }}</a></p>
+                            <p><i class="fas fa-fax"></i> {{ advisor.fax }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="section-title">Education and Experience</h5>
+                    <ul>
+                        {% for edu in advisor.education_experiences.all %}
+                        <li>{{ edu.date_range }} - {{ edu.position }}, {{ edu.institution }} </li>
+                        {% endfor %}
+                    </ul>
+                    <h5 class="section-title">Introduction</h5>
+                    <p>{{ advisor.introduction }}</p>
+                    <h5 class="section-title">Keywords</h5>
+                    <div class="badge-container">
+                        {% for keyword in advisor.keywords_list %}
+                        <span class="badge badge-secondary">{{ keyword }}</span>
+                        {% endfor %}
+                    </div>
+                    <h5 class="section-title">Recent Achievements (Publications)</h5>
+                    <ul>
+                        {% for publication in advisor.publications.all %}
+                        <li>{{ publication.title }} - {{ publication.published_date|date:"F Y" }}</li>
+                        {% endfor %}
+                    </ul>
+                    <h5 class="section-title">Recent Achievements (Projects)</h5>
+                    <ul>
+                        {% for project in advisor.projects.all %}
+                        <li>{{ project.name }} - {{ project.start_date|date:"F Y" }} to {{ project.end_date|date:"F Y" }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

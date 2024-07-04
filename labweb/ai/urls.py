@@ -6,8 +6,10 @@ from member import views as member_views
 from notice import views as notice_views
 from project import views as project_views
 from publications import views as publications_views
+from advisor import views as advisor_views
 
 urlpatterns = [
+    path('advisors/', advisor_views.advisor_list, {'team': 'ai'}, name='ai_advisors'),
     path('awards/', awards_view.ai_award, name='ai_award'),
     path('research_topic/', area_views.ai_research_topic, name='ai_research_topic'),
     path('gallery/', gallery_views.ai_gallery, name='ai_gallery'),
