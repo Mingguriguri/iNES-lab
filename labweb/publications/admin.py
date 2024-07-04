@@ -13,4 +13,5 @@ class PublicationAdmin(admin.ModelAdmin):
     list_filter = ('team', 'pub_type', 'published_date')
     search_fields = ('title', 'citation_text', 'publisher')
     filter_horizontal = ('authors', 'areas')
+    
 

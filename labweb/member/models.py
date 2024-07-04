@@ -21,6 +21,7 @@ class member_list(models.Model):
     TEAM_CHOICES = (
         ('AI', 'AI Team'),
         ('HW', 'Hardware Team'),
+        ('OT', 'Others'),
     )
     team = models.CharField(max_length=2, choices=TEAM_CHOICES, default='HW')
 
