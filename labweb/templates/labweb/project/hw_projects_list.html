@@ -1,6 +1,8 @@
 {% extends 'labweb/base.html' %}
 
 {% block style %}
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <style>
     .title-text {
       color: black;
@@ -11,21 +13,28 @@
     .card-text {
       text-align: justify;
     }
-    /* 페이지네이션 스타일 */
+    .card-img-top {
+      height: 200px; /* 고정 높이 설정 */
+      width: 100%; /* 너비를 100%로 설정 */
+      object-fit: cover; /* 이미지를 컨테이너에 맞추기 위해 잘라냄 */
+    }
+    .project-lead {
+      font-weight: bold;
+    }
     .pagination .page-item .page-link {
-      color: #333; /* 기본 텍스트 색상 */
+      color: #6c757d; /* 기본 텍스트 색상 */
       background-color: #f8f9fa; /* 기본 배경색 */
       border: 1px solid #dee2e6; /* 테두리 색상 */
     }
     .pagination .page-item.active .page-link {
       color: #fff; /* 활성화된 페이지 텍스트 색상 */
-      background-color: #6c757d; /* 활성화된 페이지 배경색 (회색) */
-      border-color: #6c757d; /* 활성화된 페이지 테두리 색상 */
+      background-color: #6c757d; /* 활성화된 페이지 배경색 */
+      border-color: #dee2e6; /* 활성화된 페이지 테두리 색상 */
     }
     .pagination .page-item .page-link:hover {
       color: #fff; /* 호버 텍스트 색상 */
-      background-color: #6c757d; /* 호버 배경색 (회색) */
-      border-color: #6c757d; /* 호버 테두리 색상 */
+      background-color: #6c757d; /* 호버 배경색 */
+      border-color: #dee2e6; /* 호버 테두리 색상 */
     }
   </style>
 {% endblock %}
@@ -34,9 +43,8 @@
 <div class="container py-5">
   <header class="text-center">
     <br><br><br><br><br><br>
-    <h1 class="display-4 font-weight-bold">AI Projects</h1>
-    <p class="font-italic text-muted mb-0">Let me introduce the research topic of our lab. We study Network AI that can be used in real life.</p>
-    <br><br><br>
+    <h1 class="display-4 font-weight-bold">HW Projects</h1>
+    <p class="font-italic text-muted mb-0">Let me introduce projects of Hardware Team</p>
   </header>
 
   {% for project in projects %}
@@ -44,7 +52,7 @@
     <div class="row no-gutters">
       <div class="col-md-4" style="max-width: 500px;">
         {% if project.first_photo %}
-          <img src="{{ project.first_photo.photo.url }}" class="img-thumbnail card-img-top" alt="Project image" style="max-height: 200px; width: 100%; object-fit: cover;">
+          <img src="{{ project.first_photo.photo.url }}" class="img-thumbnail card-img-top" alt="Project image">
         {% else %}
           <div class="card-img-top"></div> <!-- 빈 이미지를 위한 공간 -->
         {% endif %}
@@ -52,15 +60,24 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">
-            <a href="/ai/projects/{{ project.id }}/" class="title-text">{{ project.name }}</a>
+            <a href="/hw/projects/{{ project.id }}/" class="title-text">{{ project.name }}</a>
           </h5>
-          <p class="card-text">{{ project.description|truncatewords:30 }}</p>
-          <p class="card-text"><small class="text-muted">{{ project.start_date|date:"Y-m-d" }}</small></p>
-          <h5 style="text-align: left;">
+          <h6 style="text-align: left;">
             {% for area in project.areas.all %}
-              <span class="badge badge-dark">{{ area.name }}</span>
+              <span class="badge badge-secondary">{{ area.area_name }}</span>
             {% endfor %}
-          </h5>
+          </h6>
+          <p class="card-text">{{ project.description|truncatewords:30 }}</p>
+          <div class="project-lead">
+            Project Leader: {{ project.project_lead }}
+            <div class="members">
+              {% for member in project.members.all %}
+                <span class="badge badge-light">{{ member.name }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          <br>
+          <p class="card-text"><small class="text-muted">{{ project.start_date|date:"Y-m-d" }}</small></p>
         </div>
       </div>
     </div>
@@ -68,40 +85,44 @@
   {% endfor %}
 
   <!-- 페이지네이션 -->
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      {% if projects.has_previous %}
-      <li class="page-item">
-        <a class="page-link" href="?page={{ projects.previous_page_number }}">Previous</a>
-      </li>
-      {% else %}
-      <li class="page-item disabled">
-        <a class="page-link" href="#">Previous</a>
-      </li>
-      {% endif %}
-      
-      {% for num in projects.paginator.page_range %}
-      {% if projects.number == num %}
-      <li class="page-item active">
-        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
-      </li>
-      {% else %}
-      <li class="page-item">
-        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
-      </li>
-      {% endif %}
-      {% endfor %}
-      
-      {% if projects.has_next %}
-      <li class="page-item">
-        <a class="page-link" href="?page={{ projects.next_page_number }}">Next</a>
-      </li>
-      {% else %}
-      <li class="page-item disabled">
-        <a class="page-link" href="#">Next</a>
-      </li>
-      {% endif %}
-    </ul>
-  </nav>
+  <div class="row mt-5">
+    <div class="col-12">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          {% if projects.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ projects.previous_page_number }}">&#10094; Prev</a>
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="#">&#10094; Prev</a>
+          </li>
+          {% endif %}
+          
+          {% for num in projects.paginator.page_range %}
+          {% if projects.number == num %}
+          <li class="page-item active">
+            <a class="page-link" href="?page={{ num }}" style="text-decoration:none;">{{ num }}</a>
+          </li>
+          {% else %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ num }}" style="text-decoration:none;">{{ num }}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+          
+          {% if projects.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ projects.next_page_number }}">Next &#10095;</a>
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Next &#10095;</a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </div>
 </div>
 {% endblock %}
