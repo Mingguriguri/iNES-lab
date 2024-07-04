@@ -68,8 +68,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize', #날짜 템플릿
 
     # 애플리케이션
-    'ai.app.AiConfig',
-    'hw.app.HwConfig',
+    'ai.apps.AiConfig',
+    'hw.apps.HwConfig',
     'member.apps.MemberConfig',
     'projects.apps.ProjectsConfig',
     'project.apps.ProjectConfig',
