@@ -8,6 +8,13 @@ class Publication(models.Model):
         ('JOUR', 'Journal'),
         ('SURV', 'Survey'),
     ]
+
+    TEAM_CHOICES = (
+        ('AI', 'AI Team'),
+        ('HW', 'Hardware Team'),
+    )
+    team = models.CharField(max_length=2, choices=TEAM_CHOICES, default='HW')
+    
     title = models.CharField(max_length=255)
     citation_text = models.TextField()
     published_date = models.DateTimeField()

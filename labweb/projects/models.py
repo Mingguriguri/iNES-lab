@@ -2,6 +2,12 @@ from django.db import models
 
 # Create your models here.
 class article_list(models.Model):
+    TEAM_CHOICES = (
+        ('AI', 'AI Team'),
+        ('HW', 'Hardware Team'),
+    )
+    team = models.CharField(max_length=2, choices=TEAM_CHOICES, default='HW')
+
     article_name = models.CharField(max_length=150)
     article_dates = models.DateTimeField(blank = True, null = True)
     article_author = models.CharField(max_length=150, default="")

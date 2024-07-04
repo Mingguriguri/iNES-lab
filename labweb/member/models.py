@@ -17,6 +17,13 @@ class member_list(models.Model):
         ('CU', 'Current'),
         ('AL', 'Alumni'),
     ]
+    
+    TEAM_CHOICES = (
+        ('AI', 'AI Team'),
+        ('HW', 'Hardware Team'),
+    )
+    team = models.CharField(max_length=2, choices=TEAM_CHOICES, default='HW')
+
     name = models.CharField(max_length=20, default="Name")
     email = models.EmailField(max_length=254, default="@gachon.ac.kr")
     main_photo = models.FileField(upload_to="upload/%Y/%m/%d/", blank=True)
@@ -25,6 +32,6 @@ class member_list(models.Model):
     department = models.CharField(max_length=50, default = "Department of Biomedical Engineering")
     degree = models.CharField(max_length=50, choices=DEGREE_CHOICES, default='BS')
     status = models.CharField(max_length=2, choices=STATUS_CHOICES, default='CU')
-
+    
     def __str__(self):
         return self.name

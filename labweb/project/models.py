@@ -4,6 +4,11 @@ from area.models import Area
 
 # Create your models here.
 class Projects(models.Model):
+    TEAM_CHOICES = (
+        ('AI', 'AI Team'),
+        ('HW', 'Hardware Team'),
+    )
+    team = models.CharField(max_length=2, choices=TEAM_CHOICES, default='HW')
     name = models.CharField(max_length=255)
     description = models.TextField()
     start_date = models.DateTimeField()
@@ -11,7 +16,7 @@ class Projects(models.Model):
     project_lead = models.ForeignKey(member_list, on_delete=models.CASCADE, related_name='project_lead')  # 프로젝트 리더
     members = models.ManyToManyField(member_list)  # 프로젝트에 참여하는 멤버들
     areas = models.ManyToManyField(Area)  # 프로젝트 관련 영역
-    
+
     def __str__(self):
         return self.name
 

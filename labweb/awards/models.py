@@ -4,6 +4,11 @@ from member.models import member_list
 import datetime
 # Create your models here.
 class Awards(models.Model):
+    TEAM_CHOICES = (
+        ('AI', 'AI Team'),
+        ('HW', 'Hardware Team'),
+    )
+    team = models.CharField(max_length=2, choices=TEAM_CHOICES, default='HW')
     title = models.CharField(max_length=255, default="")
     award_dates = models.DateTimeField(default=datetime.datetime.now)
     contents = models.TextField(blank=True, null=True)
