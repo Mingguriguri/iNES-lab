@@ -1,5 +1,5 @@
 from django.db import models
-from member.models import member_list 
+from member.models import member_list
 from area.models import Area
 
 class Projects(models.Model):
@@ -16,11 +16,17 @@ class Projects(models.Model):
     members = models.ManyToManyField(member_list)  # 프로젝트에 참여하는 멤버들
     areas = models.ManyToManyField(Area)  # 프로젝트 관련 영역
     keywords = models.CharField(max_length=255, blank=True, null=True)  # 키워드 필드
-    photo_path = models.CharField(max_length=255, blank=True, null=True)  # 이미지 경로 필드
-    architecture_path = models.CharField(max_length=255, blank=True, null=True)  # 아키텍처 이미지 경로 필드
     github_link = models.URLField(max_length=200, blank=True, null=True)  # GitHub 링크
     paper_link = models.URLField(max_length=200, blank=True, null=True)  # 논문 링크
     other_link = models.URLField(max_length=200, blank=True, null=True)  # 기타 링크
 
     def __str__(self):
         return self.name
+
+# 여러 파일 관리
+class ProjectPhoto(models.Model):
+    project = models.ForeignKey(Projects, related_name='photos', on_delete=models.CASCADE)
+    photo = models.FileField(upload_to='upload/project/%Y/%m/%d/')
+
+    def __str__(self):
+        return f"Photo for {self.project.name}"

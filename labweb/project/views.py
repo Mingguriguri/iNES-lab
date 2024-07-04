@@ -25,8 +25,10 @@ def hw_projects_list(request):
 def project_detail(request, project_id):
     project = get_object_or_404(Projects, pk=project_id)
     keywords = project.keywords.split(';') if project.keywords else []
+    photos = project.photos.all()
     context = {
         'project': project,
         'keywords': keywords,
+        'photos': photos,
     }
     return render(request, 'labweb/project/project_detail.html', context)
