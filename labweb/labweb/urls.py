@@ -26,9 +26,12 @@ def health_check(request):
 urlpatterns = [
     path('', include('home.urls')),
     path('health/', health_check), # 상태검사 확인 경로 지정
+
+    # Team Page
+    path('ai/', include('ai.urls')),
+    path('hw/', include('hw.urls')),
+
     path('member/', include('member.urls')),
-    path('projects/', include('projects.urls')), # 과거
-    path('project/', include('project.urls')), # 최근 
     path('topic/', include('area.urls')),
     path('contact/', include('contact.urls')),
     path('gallery/', include('gallery.urls')),

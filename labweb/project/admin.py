@@ -1,10 +1,24 @@
 from django.contrib import admin
-from .models import Projects
+from .models import Projects, ProjectPhoto
 
-# Register your models here.
+class ProjectPhotoInline(admin.TabularInline):
+    model = ProjectPhoto
+    extra = 10  # 추가할 수 있는 사진 수
+
+
+'''
+목록 보기: list_display
+필터: list_filter
+검색: search_fields
+정렬: ordering
+'''
 class ProjectsAdmin(admin.ModelAdmin):
-    list_display = ['name', 'start_date', 'end_date', 'project_lead']  # Admin 목록에 표시할 필드
-    filter_horizontal = ('members', 'areas',)  # 멤버와 영역을 수평으로 필터링
+    inlines = [ProjectPhotoInline]
+    list_display = ('team', 'name', 'start_date', 'end_date')
+    list_filter = ('team', 'areas', 'keywords')
+    search_fields = ('team', 'title', 'contents')
+    filter_horizontal = ('members', 'areas')
+    ordering = ('-start_date', '-end_date', 'name')
 
-
-admin.site.register(Projects)
+admin.site.register(Projects, ProjectsAdmin)
+admin.site.register(ProjectPhoto)

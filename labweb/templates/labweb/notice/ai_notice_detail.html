@@ -1,0 +1,75 @@
+{% extends 'labweb/base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<style>
+  .notice-title {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333;
+  }
+  .notice-meta {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  .notice-meta i {
+    margin-right: 5px;
+    color: #777;
+  }
+  .notice-meta p {
+    margin-bottom: 4px;
+  }
+  .notice-content {
+    margin-bottom: 40px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+{% load humanize %}
+<div class="container py-5">
+    <header class="text-center">
+    <br><br><br><br><br><br>
+    <h1 class="display-4 font-weight-bold">AI Notice</h1>
+    <p class="font-italic text-muted mb-0">We have new news!</p>
+    <br><br><br>
+  </header>
+  <a href="{% url 'ai_notice_list' %}" class="btn btn-dark">&#10094; Back to Notice List</a>
+
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="notice-title">
+        <h2>{{ notice.title }}</h2>
+      </div>
+      <div class="notice-meta">
+        <span><i class="fas fa-user"></i> 작성자: {{ notice.author }}</span>
+        <span><i class="fas fa-clock"></i> 작성일: {{ notice.created_at|date:"Y-m-d H:i" }}</span>
+        <span><i class="fas fa-edit"></i> 최근 수정일: {{ notice.updated_at|naturaltime }}</span>
+    </div>      
+    <div class="notice-content">
+      {{ notice.content|linebreaks }}
+    </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6 text-left">
+        {% if prev_notice %}
+            <a href="{% url 'ai_notice_detail' prev_notice.id %}" class="btn btn-outline-dark">&#10094; Prev</a>
+        {% endif %}
+    </div>
+    <div class="col-md-6 text-right">
+        {% if next_notice %}
+            <a href="{% url 'ai_notice_detail' next_notice.id %}" class="btn btn-outline-dark">Next &#10095;</a>
+        {% endif %}
+    </div>
+</div>
+
+</div>
+{% endblock %}

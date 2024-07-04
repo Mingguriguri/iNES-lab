@@ -1,0 +1,148 @@
+
+{% extends 'labweb/base.html' %}
+
+
+{% block style %}
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/css/member.css">
+  <style>
+    
+    
+
+  </style>
+{% endblock %}
+{% block content %}
+  
+
+  <div class="container py-5">
+    <header class="text-center">
+      <br><br><br> <br><br><br>
+      <h1 class="display-4 font-weight-bold">People</h1>
+      <p class="font-italic text-muted mb-0">Let me introduce AI Team members of our lab</p>
+      <br><br><br>
+      <h3 class="display-7 font-weight-bold">Member</h3>
+    
+    <div class="row">
+      <div style="padding: 5px;">
+        <button type="button" class="btn btn-light degree-button" id="button" onclick="change_btn(event)" >
+          <a href="{% url 'ai_filter_by_degree' %}"  class="degree-link"> 
+            All
+          </a> 
+        </button>
+        
+      
+      </div>
+
+
+      <!-- {% if degrees %}
+      {% for degree in degrees %}
+        <div style="padding: 5px;">
+          <button type="button" class="btn btn-light button"><a href="{% url 'filter_by_degree' %}?degree={{degree}}" style=" color: rgb(83, 83, 83); font-weight:400; text-decoration: none; " > {{degree}}</a></button>
+        </div>
+      
+      {% endfor %}
+      
+      {%endif%} -->
+
+      {% if degree_choices %}
+      {% for degree_abbr, degree_name  in degree_choices %}
+          <div style="padding: 5px;">
+            <button type="button" class="btn btn-light degree-button" id="button" onclick="change_btn(event)">
+                <a href="{% url 'ai_filter_by_degree' %}?degree={{ degree_abbr }}" class="degree-link">
+                    {{ degree_name }}
+                </a>
+            </button>
+         </div>
+        {% endfor %}
+    {% endif %}
+
+    </div>
+      <hr/>
+
+    {% if current_members %}
+      <div class="row">
+      {% for member in current_members %}
+        <!-- border-style: none; -->
+        <!-- Current 멤버 섹션 -->
+          <div class="card mb-2 ml-2 mr-2" style="width:500px; border-style: none; box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.1); "> 
+            <div class="row no-gutters" style="display: flex; align-items: center; justify-content: center; ">
+              <div class="col-lg-4">
+                <img class="card-img-top" src="{{member.main_photo.url}}" alt="Card image" style="max-height: 200px; width: 150px; --hover-image: url({{member.hobby_photo.url}})">
+              </div>
+              <div class="col-lg-8">
+                <div class="card-body">
+                  <!-- <h4 class="card-title" style="justify-content: left; display: inline;">{{member.name_text}}</h4>
+                  <p style="justify-content: left; display: inline; text-align: left;"><span class="badge badge-dark">{{member.degree}}</span></p> -->
+                  <h3 class="card-title" style="text-align: left; font-weight: 800;">{{member.name}}</h3>
+                  <h5 style="text-align: left;"><span class="badge badge-dark">{{member.get_status_display}}</span> <span class="badge badge-dark">{{member.get_degree_display}} </span> </h5>
+                  <h5 style="text-align: left;"></h5>
+                  <p class="card-text" style="font-size: 0.9em; text-align: left;">{{member.department}}</p>
+                  <hr class="dropdown-divider">
+
+                  <p class="card-text" style="text-align: left;"><i class="fa fa-solid fa-comment"></i>&nbsp&nbsp{{member.motto}}</p>
+                  <p class="card-text" style="font-size: 1em; text-align: left;"><i class="fa fa-solid fa-envelope"></i>&nbsp&nbsp{{member.email}}</p>
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        <br><br><br>     
+      </div>
+      {%endif%}
+
+      <!-- Alumni 멤버 섹션 -->
+      {% if alumni_members %}
+      <br/><br/><br/>
+  
+      <h3 class="display-7 font-weight-bold" style="padding: 10px;">Alumni</h3>
+      <hr/>
+      <div class="row">
+        
+        {% for member in alumni_members %}
+
+          <div class="card mb-3 ml-2 mr-2" style="width:500px; border-style: none; box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.1); "> 
+            <div class="row no-gutters" style="display: flex; align-items: center; justify-content: center; ">
+              <div class="col-lg-4">
+                <img class="card-img-top" src="{{member.main_photo.url}}" alt="Card image" style="max-height: 200px; width: 150px; --hover-image: url({{member.hobby_photo.url}})">
+              </div>
+              <div class="col-lg-8">
+                <div class="card-body">
+                  <!-- <h4 class="card-title" style="justify-content: left; display: inline;">{{member.name_text}}</h4>
+                  <p style="justify-content: left; display: inline; text-align: left;"><span class="badge badge-dark">{{member.degree}}</span></p> -->
+                  <h3 class="card-title" style="text-align: left; font-weight: 800;">{{member.name}}</h3>
+                  <h5 style="text-align: left;"><span class="badge badge-dark">{{member.get_status_display}}</span> <span class="badge badge-dark">{{member.get_degree_display}} </span> </h5>
+                  <h5 style="text-align: left;"></h5>
+                  <p class="card-text" style="font-size: 0.9em; text-align: left;">{{member.department}}</p>
+                  <hr class="dropdown-divider">
+
+                  <p class="card-text" style="text-align: left;"><i class="fa fa-solid fa-comment"></i>&nbsp&nbsp{{member.motto}}</p>
+                  <p class="card-text" style="font-size: 1em; text-align: left;"><i class="fa fa-solid fa-envelope"></i>&nbsp&nbsp{{member.email}}</p>
+                    
+                </div>
+              </div>
+            </div>
+        </div>
+
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    </div>
+  <script src="https://example.com/fontawesome/v5.15.4/js/all.js" data-auto-a11y="true" ></script>
+  <script>
+    function change_btn(e){
+      var btns = document.querySelectorAll(".degree-button");
+      btns.forEach(function (btn, i) {
+      if (e.currentTarget == btn) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
+    console.log(e.currentTarget);
+    }
+
+  </script>
+
+{% endblock %}  
