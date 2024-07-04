@@ -8,7 +8,7 @@ from .models import Awards
 def ai_award(request):
     awards = Awards.objects.all().order_by('-award_dates')
     awards = Awards.objects.filter(team='AI')
-    template = loader.get_template('../templates/labweb/award/ai_awards.html.html')
+    template = loader.get_template('../templates/labweb/award/ai_awards.html')
     context = {
         'award_list': awards
     }
@@ -17,7 +17,7 @@ def ai_award(request):
 
 def hw_award(request):
     awards = Awards.objects.all().order_by('-award_dates')
-    template = loader.get_template('../templates/labweb/award/award/hw_awards.html.html')
+    template = loader.get_template('../templates/labweb/award/hw_awards.html')
     context = {
         'award_list': awards
     }

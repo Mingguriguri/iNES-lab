@@ -58,6 +58,18 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "awards.apps.AwardsConfig",
+    'django.contrib.humanize', #날짜 템플릿
+
+    # 애플리케이션
+    'ai.app.AiConfig',
+    'hw.app.HwConfig',
     'member.apps.MemberConfig',
     'projects.apps.ProjectsConfig',
     'project.apps.ProjectConfig',
@@ -68,14 +80,8 @@ INSTALLED_APPS = [
     'area.apps.AreaConfig',
     'notice.apps.NoticeConfig',
     'history_of_ines.apps.HistoryOfInesConfig',
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "awards.apps.AwardsConfig",
-    'django.contrib.humanize', #날짜 템플릿
+
+   
 ]
 
 MIDDLEWARE = [
