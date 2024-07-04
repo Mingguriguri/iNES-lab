@@ -1,7 +1,6 @@
 {% extends 'labweb/base.html' %}
 
 {% block style %}
-  <link rel="stylesheet" href="/static/css/member.css">
   <style>
     .title-text {
       color: black;
@@ -12,6 +11,22 @@
     .card-text {
       text-align: justify;
     }
+    /* 페이지네이션 스타일 */
+    .pagination .page-item .page-link {
+      color: #333; /* 기본 텍스트 색상 */
+      background-color: #f8f9fa; /* 기본 배경색 */
+      border: 1px solid #dee2e6; /* 테두리 색상 */
+    }
+    .pagination .page-item.active .page-link {
+      color: #fff; /* 활성화된 페이지 텍스트 색상 */
+      background-color: #6c757d; /* 활성화된 페이지 배경색 (회색) */
+      border-color: #6c757d; /* 활성화된 페이지 테두리 색상 */
+    }
+    .pagination .page-item .page-link:hover {
+      color: #fff; /* 호버 텍스트 색상 */
+      background-color: #6c757d; /* 호버 배경색 (회색) */
+      border-color: #6c757d; /* 호버 테두리 색상 */
+    }
   </style>
 {% endblock %}
 
@@ -19,8 +34,8 @@
 <div class="container py-5">
   <header class="text-center">
     <br><br><br><br><br><br>
-    <h1 class="display-4 font-weight-bold">HW Projects</h1>
-    <p class="font-italic text-muted mb-0">Let me introduce the research topic of our lab. We study </p>
+    <h1 class="display-4 font-weight-bold">AI Projects</h1>
+    <p class="font-italic text-muted mb-0">Let me introduce the research topic of our lab. We study Network AI that can be used in real life.</p>
     <br><br><br>
   </header>
 
@@ -28,12 +43,16 @@
   <div class="mx-auto card mb-3" style="max-width: 1100px; margin-top: 10px;">
     <div class="row no-gutters">
       <div class="col-md-4" style="max-width: 500px;">
-        <img src="{{ project.article_photo_path }}" class="img-thumbnail" style="width: 100%; height: auto;" alt="Image not found">
+        {% if project.first_photo %}
+          <img src="{{ project.first_photo.photo.url }}" class="img-thumbnail card-img-top" alt="Project image" style="max-height: 200px; width: 100%; object-fit: cover;">
+        {% else %}
+          <div class="card-img-top"></div> <!-- 빈 이미지를 위한 공간 -->
+        {% endif %}
       </div>
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">
-            <a href="/hw/projects/{{ project.id }}/" class="title-text">{{ project.name }}</a>
+            <a href="/ai/projects/{{ project.id }}/" class="title-text">{{ project.name }}</a>
           </h5>
           <p class="card-text">{{ project.description|truncatewords:30 }}</p>
           <p class="card-text"><small class="text-muted">{{ project.start_date|date:"Y-m-d" }}</small></p>

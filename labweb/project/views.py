@@ -1,12 +1,17 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
-from .models import Projects
+from .models import Projects, ProjectPhoto
 
 def ai_projects_list(request):
     projects = Projects.objects.filter(team='AI')
     paginator = Paginator(projects, 5)  # 페이지당 5개의 프로젝트를 표시
     page = request.GET.get('page')
     projects = paginator.get_page(page)
+
+    # 각 프로젝트에 첫 번째 이미지를 추가
+    for project in projects:
+        project.first_photo = project.photos.first()
+
     context = {
         'projects': projects,
     }
@@ -17,6 +22,11 @@ def hw_projects_list(request):
     paginator = Paginator(projects, 5)  # 페이지당 5개의 프로젝트를 표시
     page = request.GET.get('page')
     projects = paginator.get_page(page)
+
+    # 각 프로젝트에 첫 번째 이미지를 추가
+    for project in projects:
+        project.first_photo = project.photos.first()
+
     context = {
         'projects': projects,
     }
