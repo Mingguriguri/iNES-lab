@@ -71,7 +71,6 @@ INSTALLED_APPS = [
     'ai.apps.AiConfig',
     'hw.apps.HwConfig',
     'member.apps.MemberConfig',
-    'projects.apps.ProjectsConfig',
     'project.apps.ProjectConfig',
     'publications.apps.PublicationsConfig',
     'contact.apps.ContactConfig',

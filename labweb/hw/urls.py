@@ -4,6 +4,7 @@ from area import views as area_views
 from gallery import views as gallery_views
 from member import views as member_views
 from notice import views as notice_views
+from project import views as project_views
 
 urlpatterns = [
     path('awards/', awards_view.hw_award, name='hw_award'),
@@ -12,8 +13,8 @@ urlpatterns = [
     path('members/', member_views.hw_members, name='hw_members'),
     path('members/filter/', member_views.hw_filter_by_degree, name='hw_filter_by_degree'),
     path('notices/', notice_views.hw_notice_list, name='hw_notice_list'),
-    path('notices/<int:notice_id>/', notice_views.hw_notice_detail, name='hw_notice_detail'),
-    
-    # path('projects/', project_views.ai_projects, name='ai_projects'),
-    # path('notices/', notice_views.ai_notices, name='ai_notices'),
+    path('notices/<int:notice_id>/', notice_views.hw_notice_detail, name='hw_notice_detail'),    
+    path('projects/', project_views.hw_projects_list, name='hw_projects_list'),
+    path('projects/<int:project_id>/', project_views.project_detail, name='project_detail'),
+
 ]

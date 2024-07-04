@@ -122,4 +122,12 @@ h2 {
     background: #CD201F;
     color: #ffffff !important;
   }
+
+  .wrapper .other:hover,
+  .wrapper .other:hover .tooltip,
+  .wrapper .other:hover .tooltip::before {
+    background: #4B89DC;
+    color: #ffffff !important;
+  }
+  
   

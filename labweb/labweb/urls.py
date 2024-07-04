@@ -32,8 +32,6 @@ urlpatterns = [
     path('hw/', include('hw.urls')),
 
     path('member/', include('member.urls')),
-    path('projects/', include('projects.urls')), # 과거
-    path('project/', include('project.urls')), # 최근 
     path('topic/', include('area.urls')),
     path('contact/', include('contact.urls')),
     path('gallery/', include('gallery.urls')),
