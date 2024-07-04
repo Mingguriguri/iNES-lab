@@ -18,14 +18,14 @@
     <header class="text-center">
       <br><br><br> <br><br><br>
       <h1 class="display-4 font-weight-bold">People</h1>
-      <p class="font-italic text-muted mb-0">Let me introduce the member of our lab. </p>
+      <p class="font-italic text-muted mb-0">Let me introduce the member of our lab, AI Team. </p>
       <br><br><br>
       <h3 class="display-7 font-weight-bold">Member</h3>
     
     <div class="row">
       <div style="padding: 5px;">
         <button type="button" class="btn btn-light degree-button" id="button" onclick="change_btn(event)" >
-          <a href="{% url 'filter_by_degree' %}"  class="degree-link"> 
+          <a href="{% url 'ai_filter_by_degree' %}"  class="degree-link"> 
             All
           </a> 
         </button>
@@ -48,7 +48,7 @@
       {% for degree_abbr, degree_name  in degree_choices %}
           <div style="padding: 5px;">
             <button type="button" class="btn btn-light degree-button" id="button" onclick="change_btn(event)">
-                <a href="{% url 'filter_by_degree' %}?degree={{ degree_abbr }}" class="degree-link">
+                <a href="{% url 'ai_filter_by_degree' %}?degree={{ degree_abbr }}" class="degree-link">
                     {{ degree_name }}
                 </a>
             </button>
