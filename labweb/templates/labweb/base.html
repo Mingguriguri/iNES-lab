@@ -181,6 +181,7 @@
     {% block content %}
     {% endblock %}  
 
+    
     <div class="footer-wrap bg-light"> 
         <footer class="container py-5">
             <div class="row">
@@ -208,27 +209,58 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-6 col-md-2">
-                    <h5>About Us</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="/members/">Member</a></li>
-                        <li><a class="text-muted" href="/history/">History</a></li>
-                        <li><a class="text-muted" href="/notices/">Notice</a></li>
-                        <li><a class="text-muted" href="/awards/">Award</a></li>
-                        <li><a class="text-muted" href="/gallery/">Gallery</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-2">
-                    <h5>Publication</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="/topic">Research Topic</a></li>
-                        <li><a class="text-muted" href="/projects/">Project</a></li>
-                        <li><a class="text-muted" href="/publication/journal">Journal</a></li>
-                        <li><a class="text-muted" href="/publication/conference">Conference</a></li>
-                    </ul>
-                </div>
+                {% if 'ai' in request.path %}
+                    <div class="col-6 col-md-2">
+                        <h5>About Us</h5>
+                        <ul class="list-unstyled text-small">
+                            <li><a class="text-muted" href="/ai/advisors/">Advisor</a></li>
+                            <li><a class="text-muted" href="/ai/member/">People</a></li>
+                            <li><a class="text-muted" href="/ai/notices/">Notice</a></li>
+                            <li><a class="text-muted" href="/ai/awards/">Award</a></li>
+                        </ul>
+                        
+                        <h5>Other Team</h5>
+                        <ul class="list-unstyled text-small">
+                            <li><a class="text-muted" href="/hw/advisors/">Go to HW team</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-6 col-md-2">
+                        <h5>Publication</h5>
+                        <ul class="list-unstyled text-small">
+                            {% comment %} <li><a class="text-muted" href="/topic">Research Topic</a></li> {% endcomment %}
+                            <li><a class="text-muted" href="/ai/projects/">Project</a></li>
+                            <li><a class="text-muted" href="/ai/publication/JOUR">Journal</a></li>
+                            <li><a class="text-muted" href="/ai/publication/CONF">Conference</a></li>                            
+                        </ul>
+        
+                    </div>
+                {% elif 'hw' in request.path %}
+                    <div class="col-6 col-md-2">
+                        <h5>About Us</h5>
+                        <ul class="list-unstyled text-small">
+                            <li><a class="text-muted" href="/hw/advisors/">Advisor</a></li>
+                            <li><a class="text-muted" href="/hw/member/">People</a></li>
+                            <li><a class="text-muted" href="/hw/notices/">Notice</a></li>
+                            <li><a class="text-muted" href="/hw/awards/">Award</a></li>
+                        </ul>
+                        <h5>Other Team</h5>
+                        <ul class="list-unstyled text-small">
+                            <li><a class="text-muted" href="/ai/advisors/">Go to AI team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <h5>Publication</h5>
+                        <ul class="list-unstyled text-small">
+                            {% comment %} <li><a class="text-muted" href="/topic">Research Topic</a></li> {% endcomment %}
+                            <li><a class="text-muted" href="/hw/projects/">Project</a></li>
+                            <li><a class="text-muted" href="/hw/publication/JOUR">Journal</a></li>
+                            <li><a class="text-muted" href="/hw/publication/CONF">Conference</a></li>
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
-            <small class="d-block mb-3 text-muted" style="text-align: center; margin-top: 10px;">&copy; Copyright, 2023, MJ Kim, iNES Labatory, Gachon University</small>
+            <small class="d-block mb-3 text-muted" style="text-align: center; margin-top: 10px;">&copy; Copyright, 2023, MinJeong Kim, iNES Labatory, Gachon University</small>
         </footer>
     </div>
 </body>
