@@ -1,0 +1,34 @@
+
+{% extends 'labweb/base.html' %}
+
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+  <div class="container py-5">
+    <header class="text-center">
+    <br><br><br><br><br><br>
+    <h1 class="display-4 font-weight-bold">Gallery</h1>
+    <p class="font-italic text-muted mb-0">AI team</p>
+    <br><br><br>
+  </header>
+   
+    <div class="row row-cols-1 row-cols-md-3">
+      {% if Gallery %}
+        {% for photo in Gallery %}
+          <div class="col mb-3">
+            <div class="card">
+              <img src="{{photo.photo_path}}" class="card-img-top" style="min-width: 100%; width: auto; height: auto;" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{photo.title}}</h5>
+                <p class="card-text">{{photo.contents}} </p>
+                <p class="card-text">{{photo.upload_date|date:"Y-m-d"}} </p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}  
