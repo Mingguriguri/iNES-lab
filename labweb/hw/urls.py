@@ -5,6 +5,7 @@ from gallery import views as gallery_views
 from member import views as member_views
 from notice import views as notice_views
 from project import views as project_views
+from publications import views as publications_views
 
 urlpatterns = [
     path('awards/', awards_view.hw_award, name='hw_award'),
@@ -16,5 +17,5 @@ urlpatterns = [
     path('notices/<int:notice_id>/', notice_views.hw_notice_detail, name='hw_notice_detail'),    
     path('projects/', project_views.hw_projects_list, name='hw_projects_list'),
     path('projects/<int:project_id>/', project_views.project_detail, name='project_detail'),
-
+    path('publications/<str:pub_type>/', publications_views.hw_publications, name='hw_publications'),
 ]
