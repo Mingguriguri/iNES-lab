@@ -171,6 +171,7 @@ h3.span {
 }
 
 h5.info-text {
+  margin: 25px;
   font-size: 1vw;
   color: #707070;
   text-align: center;

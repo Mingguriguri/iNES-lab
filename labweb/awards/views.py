@@ -14,7 +14,7 @@ def ai_award(request):
 def hw_award(request):
     awards = Awards.objects.all().order_by('-award_dates')
     awards = Awards.objects.filter(team='HW')
-    return render(request, 'labweb/award/hw_award.html',
+    return render(request, 'labweb/award/hw_awards.html',
                   {
                       'award_list': awards
                   })
