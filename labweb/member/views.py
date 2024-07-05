@@ -1,23 +1,34 @@
 from django.shortcuts import render
 from .models import member_list
+import logging
+
+# 로거 설정
+logger = logging.getLogger(__name__)
 
 # 사용자 정의 정렬 함수
 def degree_weight(degree):
-    if degree == 'Co-Advisor':
+    """학위(degree)에 따라 가중치를 반환하는 함수"""
+    if degree == 'CA':  # Co-Advisor
         return 1
-    elif degree.startswith('Professor'):
+    elif degree == 'PR':  # Professor
         return 2
-    elif degree == 'PhD':
+    elif degree == 'PD':  # Postdoc
         return 3
-    elif degree == 'Master':
+    elif degree == 'PHD':  # PhD
         return 4
-    else:
+    elif degree == 'MS':  # Master
         return 5
+    else:  # BS: Bachelor
+        return 6
 
 def ai_members(request):
-    members = member_list.objects.filter(team='AI')
-    current_members = members.filter(status='CU')
-    alumni_members = members.filter(status='AL')
+    """AI 팀 멤버를 학위 순서와 입력 날짜 순서로 정렬하여 반환"""
+    members = list(member_list.objects.filter(team='AI'))
+    logger.debug(f"Members before sorting: {[member.degree for member in members]}")
+    members.sort(key=lambda member: (degree_weight(member.degree), member.id))  # 학위 순서와 입력 날짜 순서로 정렬
+    logger.debug(f"Members after sorting: {[member.degree for member in members]}")
+    current_members = [m for m in members if m.status == 'CU']
+    alumni_members = [m for m in members if m.status == 'AL']
     context = {
         'member_list': members,
         'current_members': current_members,
@@ -26,9 +37,13 @@ def ai_members(request):
     return render(request, 'labweb/member/ai_member.html', context)
 
 def hw_members(request):
-    members = member_list.objects.filter(team='HW')
-    current_members = members.filter(status='CU')
-    alumni_members = members.filter(status='AL')
+    """HW 팀 멤버를 학위 순서와 입력 날짜 순서로 정렬하여 반환"""
+    members = list(member_list.objects.filter(team='HW'))
+    logger.debug(f"Members before sorting: {[member.degree for member in members]}")
+    members.sort(key=lambda member: (degree_weight(member.degree), member.id))  # 학위 순서와 입력 날짜 순서로 정렬
+    logger.debug(f"Members after sorting: {[member.degree for member in members]}")
+    current_members = [m for m in members if m.status == 'CU']
+    alumni_members = [m for m in members if m.status == 'AL']
     context = {
         'member_list': members,
         'current_members': current_members,
@@ -37,13 +52,15 @@ def hw_members(request):
     return render(request, 'labweb/member/hw_member.html', context)
 
 def ai_filter_by_degree(request):
+    """AI 팀 멤버를 학위 기준으로 필터링하고 정렬하여 반환"""
     degree = request.GET.get('degree', None)
     if degree:
-        filtered_members = member_list.objects.filter(degree=degree, team='AI')
+        filtered_members = list(member_list.objects.filter(degree=degree, team='AI'))
     else:
-        filtered_members = member_list.objects.filter(team='AI')
-    current_members = filtered_members.filter(status='CU')
-    alumni_members = filtered_members.filter(status='AL')
+        filtered_members = list(member_list.objects.filter(team='AI'))
+    filtered_members.sort(key=lambda member: (degree_weight(member.degree), member.id))  # 학위 순서와 입력 날짜 순서로 정렬
+    current_members = [m for m in filtered_members if m.status == 'CU']
+    alumni_members = [m for m in filtered_members if m.status == 'AL']
     context = {
         'current_members': current_members,
         'alumni_members': alumni_members,
@@ -53,13 +70,15 @@ def ai_filter_by_degree(request):
     return render(request, 'labweb/member/ai_member.html', context)
 
 def hw_filter_by_degree(request):
+    """HW 팀 멤버를 학위 기준으로 필터링하고 정렬하여 반환"""
     degree = request.GET.get('degree', None)
     if degree:
-        filtered_members = member_list.objects.filter(degree=degree, team='HW')
+        filtered_members = list(member_list.objects.filter(degree=degree, team='HW'))
     else:
-        filtered_members = member_list.objects.filter(team='HW')
-    current_members = filtered_members.filter(status='CU')
-    alumni_members = filtered_members.filter(status='AL')
+        filtered_members = list(member_list.objects.filter(team='HW'))
+    filtered_members.sort(key=lambda member: (degree_weight(member.degree), member.id))  # 학위 순서와 입력 날짜 순서로 정렬
+    current_members = [m for m in filtered_members if m.status == 'CU']
+    alumni_members = [m for m in filtered_members if m.status == 'AL']
     context = {
         'current_members': current_members,
         'alumni_members': alumni_members,

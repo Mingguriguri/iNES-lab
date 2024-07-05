@@ -26,8 +26,10 @@
       <br><br><br><br><br><br>
       <h1 class="display-4 font-weight-bold">{% if pub_type == 'CONF' %}Conference{% else %}Journal{% endif %}</h1>
       <p class="font-italic text-muted mb-0">
-        {% if pub_type == 'CONF' %}We present our latest research findings at various conferences.
-        {% else %} Our research is published in peer-reviewed journals.
+        {% if pub_type == 'CONF' %}
+          We present our latest research findings at various conferences.
+        {% else %}
+          Our research is published in peer-reviewed journals.
         {% endif %}
       </p>
       <br><br><br>
@@ -44,8 +46,10 @@
               <div class="card border-0" style="padding-left: 80px;">
                 <div class="card-body">
                   <p class="card-title" style="font-weight: bold; font-size:18px;">{{ pub.title }}</p>
-                  <p class="card-text">{{ pub.formatted_authors }}
-                    {% if pub.publisher %}<span style="font-style: italic">, {{ pub.publisher }}</span>{% endif %}
+                  <p class="card-text">{{ pub.authors|linebreaksbr }}
+                    {% if pub.publisher %}
+                      <span style="font-style: italic">, {{ pub.publisher }}</span>
+                    {% endif %}
                     , {{ pub.published_date|date:"F Y" }}.
                   </p>
                   {% if pub.doi_link %}

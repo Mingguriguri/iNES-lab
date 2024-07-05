@@ -1,10 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
-@font-face{
-  font-family: 'Big Caslon Medium';
-  src: url('../fonts/Big Caslon Medium.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 ::selection {
   color: #fff;
@@ -20,7 +14,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 
 body {
   font-family: 'Poppins', sans-serif !important;
@@ -50,7 +43,7 @@ canvas.background {
 }
 
 .title h1 {
-  font-family: "Big Caslon Medium", sans-serif;
+  font-weight: 800;
   font-size: 8vw;
   margin: 0;
   padding-bottom: 0.5rem;
@@ -73,20 +66,6 @@ canvas.background {
   line-height: 0.8; /* 줄 간격 조정 */
 }
 
-.description p {
-  font-family: "Big Caslon Medium", sans-serif;
-}
-
-.loader span {
-  color: #b0ccd8;
-  text-shadow: 0 0 0 #b0ccd8;
-  animation: loading 1s ease-in-out infinite alternate;
-}
-
-.loader .m2 {
-  font-size: 1.5vw !important;
-  letter-spacing: 0.5em;
-}
 
 #container {
   display: flex;
@@ -182,10 +161,6 @@ button.learn-more:hover .button-text {
   color: #fff;
 }
 
-div.h2 {
-  font-family: "Big Caslon Medium", sans-serif;
-
-}
 h3.span {
   font-size: 1vw;
   letter-spacing: 0.6em;
@@ -195,120 +170,10 @@ h3.span {
   text-align: center;
 }
 
-.loader span {
-  color: #b0ccd8;
-  text-shadow: 0 0 0 #b0ccd8;
-  animation: loading 1s ease-in-out infinite alternate;
-}
-
-
-@keyframes loading {
-  to {
-    text-shadow: 20px 0 70px #ffdf9e;
-    color: #ffbf3d;
-  }
-}
-
-.loader span:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.loader span:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.loader span:nth-child(4) {
-  animation-delay: 0.3s;
-}
-
-.loader span:nth-child(5) {
-  animation-delay: 0.4s;
-}
-
-.loader span:nth-child(6) {
-  animation-delay: 0.5s;
-}
-
-.loader span:nth-child(7) {
-  animation-delay: 0.6s;
-}
-
-.loader span:nth-child(8) {
-  animation-delay: 0.7s;
-}
-
-.loader span:nth-child(9) {
-  animation-delay: 0.8s;
-}
-
-.loader span:nth-child(10) {
-  animation-delay: 0.9s;
-}
-
-.loader span:nth-child(11) {
-  animation-delay: 1s;
-}
-
-.loader span:nth-child(12) {
-  animation-delay: 1.1s;
-}
-
-.loader span:nth-child(13) {
-  animation-delay: 1.2s;
-}
-
-.loader span:nth-child(14) {
-  animation-delay: 1.3s;
-}
-
-.loader span:nth-child(15) {
-  animation-delay: 1.4s;
-}
-
-.loader span:nth-child(16) {
-  animation-delay: 1.5s;
-}
-
-.loader span:nth-child(17) {
-  animation-delay: 1.6s;
-}
-
-.loader span:nth-child(18) {
-  animation-delay: 1.7s;
-}
-
-.loader span:nth-child(19) {
-  animation-delay: 1.8s;
-}
-
-.loader span:nth-child(20) {
-  animation-delay: 1.9s;
-}
-
-.loader span:nth-child(21) {
-  animation-delay: 2s;
-}
-
-.loader span:nth-child(22) {
-  animation-delay: 2.1s;
-}
-
-.loader span:nth-child(23) {
-  animation-delay: 2.2s;
-}
-
-.loader span:nth-child(24) {
-  animation-delay: 2.3s;
-}
-
-.loader span:nth-child(25) {
-  animation-delay: 2.4s;
-}
-
-.loader span:nth-child(26) {
-  animation-delay: 2.5s;
-}
-
-.loader span:nth-child(26) {
-  animation-delay: 2.5s;
+h5.info-text {
+  margin: 25px;
+  font-size: 1vw;
+  color: #707070;
+  text-align: center;
+  opacity: 0.7;
 }

@@ -5,10 +5,12 @@
     .advisor-header {
         border-bottom: 2px solid #007bff;
         padding-bottom: 10px;
+        margin-bottom: 20px;
     }
     .advisor-info {
         display: flex;
         align-items: center;
+        margin-bottom: 20px;
     }
     .advisor-info img {
         max-width: 150px;
@@ -18,6 +20,7 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        margin-top: 20px;
     }
     .advisor-contact p {
         margin-right: 20px;
@@ -25,14 +28,20 @@
     .section-title {
         font-weight: bold;
         color: black;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     .badge-container {
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: 20px;
     }
     .badge-container .badge {
         margin-right: 5px;
         margin-bottom: 5px;
+    }
+    .card-body ul {
+        margin-bottom: 20px;
     }
 </style>
 {% endblock %}
@@ -69,7 +78,7 @@
                     <h5 class="section-title">Education and Experience</h5>
                     <ul>
                         {% for edu in advisor.education_experiences.all %}
-                        <li>{{ edu.date_range }} - {{ edu.position }}, {{ edu.institution }} </li>
+                        <li>{{ edu.date_range }} : {{ edu.position }}, {{ edu.institution }} </li>
                         {% endfor %}
                     </ul>
                     <h5 class="section-title">Introduction</h5>
@@ -80,15 +89,24 @@
                         <span class="badge badge-secondary">{{ keyword }}</span>
                         {% endfor %}
                     </div>
-                    <h5 class="section-title">Recent Achievements (Publications)</h5>
+                    <h5 class="section-title">Recent Achievements</h5>
+                    <h6 class="section-title">Publications</h6>
                     <ul>
-                        {% for publication in advisor.publications.all %}
-                        <li>{{ publication.title }} - {{ publication.published_date|date:"F Y" }}</li>
+                        {% for publication in recent_publications %}
+                        <li>
+                            <p class="card-text" style="font-weight: bold; ">{{ publication.title }}</p>
+                            <p class="card-text">{{ publication.authors|linebreaksbr }}
+                                {% if publication.publisher %}
+                                <span style="font-style: italic">, {{ publication.publisher }}</span>
+                                {% endif %}
+                                , {{ publication.published_date|date:"F Y" }}.
+                            </p>    
+                        </li>
                         {% endfor %}
                     </ul>
-                    <h5 class="section-title">Recent Achievements (Projects)</h5>
+                    <h6 class="section-title">Projects</h6>
                     <ul>
-                        {% for project in advisor.projects.all %}
+                        {% for project in recent_projects %}
                         <li>{{ project.name }} - {{ project.start_date|date:"F Y" }} to {{ project.end_date|date:"F Y" }}</li>
                         {% endfor %}
                     </ul>

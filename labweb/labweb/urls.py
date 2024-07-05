@@ -31,15 +31,6 @@ urlpatterns = [
     path('ai/', include('ai.urls')),
     path('hw/', include('hw.urls')),
 
-    path('member/', include('member.urls')),
-    path('topic/', include('area.urls')),
-    path('contact/', include('contact.urls')),
-    path('gallery/', include('gallery.urls')),
-    path('publications/', include('publications.urls')),
-    path('publication/', include('publication.urls')),
-    path('history/', include('history_of_ines.urls')),
-    path('awards/', include('awards.urls')),
-    path('notices/', include('notice.urls')),
     path('admin/', admin.site.urls),
 ] 
 

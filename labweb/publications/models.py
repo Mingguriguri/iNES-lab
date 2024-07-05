@@ -1,5 +1,4 @@
 from django.db import models
-from member.models import member_list
 from area.models import Area
 from project.models import Projects
 
@@ -19,9 +18,9 @@ class Publication(models.Model):
     pub_type = models.CharField(max_length=4, choices=TYPE_CHOICES, default='JOUR')
 
     title = models.CharField(max_length=255)
-    authors = models.ManyToManyField(member_list)  # 참여하는 멤버들
+    authors = models.TextField(blank=True)  # 참여하는 멤버들은 그냥 직접 작성하다는 점을 반영하여 TextField로 수정
 
-    citation_text = models.TextField()
+    citation_text = models.TextField(blank=True)
     published_date = models.DateTimeField()
     doi_link = models.URLField()
     areas = models.ManyToManyField(Area, blank=True)  # 프로젝트 관련 영역
