@@ -78,7 +78,7 @@
                     <h5 class="section-title">Education and Experience</h5>
                     <ul>
                         {% for edu in advisor.education_experiences.all %}
-                        <li>{{ edu.date_range }} - {{ edu.position }}, {{ edu.institution }} </li>
+                        <li>{{ edu.date_range }} : {{ edu.position }}, {{ edu.institution }} </li>
                         {% endfor %}
                     </ul>
                     <h5 class="section-title">Introduction</h5>
@@ -90,15 +90,23 @@
                         {% endfor %}
                     </div>
                     <h5 class="section-title">Recent Achievements</h5>
-                    <h6 class="section-title"> Publications </h6>
+                    <h6 class="section-title">Publications</h6>
                     <ul>
-                        {% for publication in advisor.publications.all %}
-                        <li>{{ publication.title }} - {{ publication.published_date|date:"F Y" }}</li>
+                        {% for publication in recent_publications %}
+                        <li>
+                            <p class="card-text" style="font-weight: bold; ">{{ publication.title }}</p>
+                            <p class="card-text">{{ publication.authors|linebreaksbr }}
+                                {% if publication.publisher %}
+                                <span style="font-style: italic">, {{ publication.publisher }}</span>
+                                {% endif %}
+                                , {{ publication.published_date|date:"F Y" }}.
+                            </p>    
+                        </li>
                         {% endfor %}
                     </ul>
-                    <h6 class="section-title>Projects</h6>
+                    <h6 class="section-title">Projects</h6>
                     <ul>
-                        {% for project in advisor.projects.all %}
+                        {% for project in recent_projects %}
                         <li>{{ project.name }} - {{ project.start_date|date:"F Y" }} to {{ project.end_date|date:"F Y" }}</li>
                         {% endfor %}
                     </ul>
