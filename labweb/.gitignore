@@ -2,6 +2,7 @@
 __pycache__/
 lab_venv/
 lab_venv
+.DS_Store
 
 # 로컬 데이터베이스는 서버에 영향을 주지 않아야 한다.
 db.sqlite3
