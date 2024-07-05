@@ -19,7 +19,7 @@ class Publication(models.Model):
     pub_type = models.CharField(max_length=4, choices=TYPE_CHOICES, default='JOUR')
 
     title = models.CharField(max_length=255)
-    authors = models.ManyToManyField(member_list)  # 참여하는 멤버들
+    authors = models.TextField()  # 참여하는 멤버들은 그냥 직접 작성하다는 점을 반영하여 TextField로 수정
 
     citation_text = models.TextField()
     published_date = models.DateTimeField()
