@@ -2,3 +2,10 @@
 __pycache__/
 lab_venv/
 lab_venv
+
+# 로컬 데이터베이스는 서버에 영향을 주지 않아야 한다.
+db.sqlite3
+db.sqlite3.backup
+
+# 정적 파일(staticfiles)은 보통 collectstatic 명령을 통해 서버에 배포하므로, 로컬 개발 시 변경된 파일을 커밋할 필요가 없다.
+staticfiles/
