@@ -16,25 +16,50 @@ This is our Lab web page (ver3)
 
 - 요구사항에 맞게 각 팀 페이지에 들어가면 첫 화면에는 교수님의 정보가 나오도록 설정하였다.
 
+### People
+
+<img width="1802" alt="스크린샷 2024-07-08 오전 12 05 21" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/23f3f72d-be8c-449b-9bc2-9f0a4495cdb5">
+<img width="1802" alt="스크린샷 2024-07-08 오전 12 05 29" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/5dad692b-0f20-4671-b1a4-26e7f4f2dd0e">
+
+학위 순으로 사용자 정의 정렬하였고, 학위가 같을 경우 멤버 아이디 순(먼저 기입한 순)으로 정렬되도록 하였다.
+
+> Alumni
+Alumni는 밑에 나오도록 설정했다.
+<img width="1758" alt="스크린샷 2024-07-08 오전 12 06 39" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/6a41cac6-65df-4a90-b918-0da001cf8901">
+
+
 ### Reseaarch
 <img width="2032" alt="스크린샷 2024-07-01 오후 8 34 43" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/589f758f-39fd-4f7e-a460-789d986f12dc">
 
 Project 내용 확인
 <img width="2032" alt="스크린샷 2024-07-01 오후 8 34 57" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/3abc2529-c68c-470c-afe0-3927a621274f">
 
-### Publication - Journal
+관리자 페이지 화면:
+<img width="1357" alt="스크린샷 2024-07-08 오전 12 04 46" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/e2f04c36-a60a-48ff-842a-057735663e73">
 
-### Publication - Conference
+- Admin 페이지에서 Github 링크, Paper 링크, Other 링크를 입력할 수 있도록 하였고, 이에 대한 값이 있는 경우에만 버튼이 생기도록 설정했다.
+- Keyword 항목에는 `,`로 데이터를 입력하면 `,`를 기준으로 분리하여 keyword처럼 나올 수 있도록 설정했다.
+- 사진도 여러 장 올릴 수 있도록 설정했다.
+
+### Publication - Journal & Conference
+<img width="1822" alt="스크린샷 2024-07-07 오후 11 54 02" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/1418aa33-2f4b-4171-a91a-dd8c243b91b7">
+
+- 페이지네이션 기능을 추가했다.
 
 ### Board - Notice
+<img width="1822" alt="스크린샷 2024-07-07 오후 11 54 12" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/4ccc94c3-d3d9-490f-86ef-f271d04d3983">
 
 ### Board - Awards
+<img width="1822" alt="스크린샷 2024-07-07 오후 11 54 33" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/149c2d81-db7c-4098-a2da-47e016f04685">
+
+### Footer
+<img width="1694" alt="스크린샷 2024-07-07 오후 11 54 29" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/b96ed7e5-dd4a-4b66-97b2-64b7af591543">
+
 
 ### Admin
 > 관리자 페이지로, 연구실 멤버들이 각 페이지의 내용(데이터)을 추가,수정,삭제를 통해 웹페이지를 관리할 수 있는 영역이다.
 
 <img width="1822" alt="스크린샷 2024-07-07 오후 11 54 50" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/a5dd6738-8476-4953-a0eb-ed73729e959e">
-
 
 ---
 
