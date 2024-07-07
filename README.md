@@ -1,14 +1,20 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=INES_LAB&fontSize=50&animation=fadeIn&fontAlignY=35)
 # iNES-LAB
-This is our Lab web page
-[https://ines-lab.com/
-](https://ines-lab.com/)
+This is our Lab web page (ver3)
+> **바로가기: [https://ines-lab.com/](https://ines-lab.com/)**
+
 
 ### Main
-<img width="2032" alt="스크린샷 2024-07-01 오후 8 34 18" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/58c4c32c-5a91-4a09-8ca7-10121619b036">
+ <img width="1822" alt="스크린샷 2024-07-07 오후 11 53 24" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/33b8511e-1c78-43a0-923c-e59e0d29dc08">
+<img width="1822" alt="스크린샷 2024-07-07 오후 11 53 29" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/b533a87a-7c1f-4cd5-aec9-18541e98f29b">
+<img width="1822" alt="스크린샷 2024-07-07 오후 11 53 33" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/e6184dc0-5408-4199-acf0-41bdbeef72d1">
 
-### People
-<img width="2032" alt="스크린샷 2024-07-01 오후 8 34 32" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/11e6bba1-d91a-4196-97a0-b03c0e682b76">
+- ver2와 바뀐 사항: 글씨체를 더 두껍게 수정하고, HW팀과 AI팀의 페이지를 구분하였다. (URL 패턴도 구분하고 버튼도 생성)
+
+### Advisor
+<img width="1822" alt="스크린샷 2024-07-07 오후 11 53 38" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/4fc1019e-5e4a-4406-8f3d-b19742748bee">
+
+- 요구사항에 맞게 각 팀 페이지에 들어가면 첫 화면에는 교수님의 정보가 나오도록 설정하였다.
 
 ### Reseaarch
 <img width="2032" alt="스크린샷 2024-07-01 오후 8 34 43" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/589f758f-39fd-4f7e-a460-789d986f12dc">
@@ -17,16 +23,18 @@ Project 내용 확인
 <img width="2032" alt="스크린샷 2024-07-01 오후 8 34 57" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/3abc2529-c68c-470c-afe0-3927a621274f">
 
 ### Publication - Journal
-<img width="2032" alt="스크린샷 2024-07-01 오후 8 35 12" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/033827bb-5ff7-40e1-9721-4d5b4710a548">
 
 ### Publication - Conference
-<img width="2032" alt="스크린샷 2024-07-01 오후 8 35 31" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/86bb2e37-4974-4684-a118-c0e14ef1dbcd">
 
 ### Board - Notice
-<img width="2032" alt="스크린샷 2024-07-01 오후 8 35 40" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/d47cb3c9-dbc2-4be3-a318-2c9f921c7e5b">
 
 ### Board - Awards
-<img width="2032" alt="스크린샷 2024-07-01 오후 8 36 00" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/ff6f83cd-a7a1-422f-918c-08ce3f542fe4">
+
+### Admin
+> 관리자 페이지로, 연구실 멤버들이 각 페이지의 내용(데이터)을 추가,수정,삭제를 통해 웹페이지를 관리할 수 있는 영역이다.
+
+<img width="1822" alt="스크린샷 2024-07-07 오후 11 54 50" src="https://github.com/Mingguriguri/iNES-lab/assets/101111603/a5dd6738-8476-4953-a0eb-ed73729e959e">
+
 
 ---
 
