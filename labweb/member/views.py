@@ -14,12 +14,14 @@ def degree_weight(degree):
         return 2
     elif degree == 'PD':  # Postdoc
         return 3
-    elif degree == 'PHD':  # PhD
+    elif degree == 'RS':
         return 4
-    elif degree == 'MS':  # Master
+    elif degree == 'PHD':  # PhD
         return 5
-    else:  # BS: Bachelor
+    elif degree == 'MS':  # Master
         return 6
+    else:  # BS: Bachelor
+        return 7
 
 def ai_members(request):
     """AI 팀 멤버를 학위 순서와 입력 날짜 순서로 정렬하여 반환"""
