@@ -36,31 +36,29 @@
     </header>
     
     <div>
-      {% if publications %}
-        {% for year in years %}
+      {% if publications_by_year %}
+        {% for year, publications in publications_by_year.items %}
           <div class="year">
             <h4 style="font-weight: bold">{{ year }}</h4>
           </div>
           {% for pub in publications %}
-            {% if pub.published_date.year == year %}
-              <div class="card border-0" style="padding-left: 80px;">
-                <div class="card-body">
-                  <p class="card-title" style="font-weight: bold; font-size:18px;">{{ pub.title }}</p>
-                  <p class="card-text">{{ pub.authors|linebreaksbr }}
-                    {% if pub.publisher %}
-                      <span style="font-style: italic">, {{ pub.publisher }}</span>
-                    {% endif %}
-                    , {{ pub.published_date|date:"F Y" }}.
-                  </p>
-                  {% if pub.doi_link %}
-                    <a href="{{ pub.doi_link }}" class="card-link">[DOI]</a>
+            <div class="card border-0" style="padding-left: 80px;">
+              <div class="card-body">
+                <p class="card-title" style="font-weight: bold; font-size:18px;">{{ pub.title }}</p>
+                <p class="card-text">{{ pub.authors|linebreaksbr }}
+                  {% if pub.publisher %}
+                    <span style="font-style: italic">, {{ pub.publisher }}</span>
                   {% endif %}
-                  {% if pub.pdf_link %}
-                    <a href="{{ pub.pdf_link }}" class="card-link">[PDF]</a>
-                  {% endif %}
-                </div>
+                  , {{ pub.published_date|date:"F Y" }}.
+                </p>
+                {% if pub.doi_link %}
+                  <a href="{{ pub.doi_link }}" class="card-link">[DOI]</a>
+                {% endif %}
+                {% if pub.pdf_link %}
+                  <a href="{{ pub.pdf_link }}" class="card-link">[PDF]</a>
+                {% endif %}
               </div>
-            {% endif %}
+            </div>
           {% endfor %}
         {% endfor %}
       {% endif %}
