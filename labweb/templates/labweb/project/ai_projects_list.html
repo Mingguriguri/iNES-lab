@@ -45,7 +45,6 @@
     <br><br><br><br><br><br>
     <h1 class="display-4 font-weight-bold">AI Projects</h1>
     <p class="font-italic text-muted mb-0">Our lab undertakes innovative projects that push the boundaries of technology and science.</p>
-    <br><br><br>
   </header>
 
   {% for project in projects %}
@@ -61,25 +60,36 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">
-            <a href="/ai/projects/{{ project.id }}/" class="title-text">{{ project.name }}</a>
+            <a href="/hw/projects/{{ project.id }}/" class="title-text">{{ project.name }}</a>
           </h5>
           <h6 style="text-align: left;">
             {% for area in project.areas.all %}
               <span class="badge badge-secondary">{{ area.area_name }}</span>
             {% endfor %}
           </h6>
-          <p class="card-text">{{ project.description|truncatewords:30 }}</p>
-          <div class="project-lead">
-            Project Leader: {{ project.project_lead }}
-            <div class="members">
-              {% for member in project.members.all %}
-                <span class="badge badge-light">{{ member.name }}</span>
-              {% endfor %}
+          {% if project.description %}
+            <p class="card-text">{{ project.description|truncatewords:30 }}</p>
+          {% endif %}
+          {% if project.project_lead %}
+            <div class="project-lead">
+              Project Leader: {{ project.project_lead }}
             </div>
+          {% endif %}
+          <div class="members">
+            {% for member in project.members.all %}
+              <span class="badge badge-light">{{ member.name }}</span>
+            {% endfor %}
           </div>
           <br>
-          <p class="card-text"><small class="text-muted">{{ project.start_date|date:"Y-m-d" }}</small></p>
-          
+
+          {% if project.start_date or project.end_date %}
+            <p class="card-text">
+              <small class="text-muted">
+                {% if project.start_date %} {{ project.start_date|date:"Y-m-d" }} ~ {% endif %}
+                {% if project.end_date %}{{ project.end_date|date:"Y-m-d" }}{% endif %}
+              </small>
+            </p>
+          {% endif %}
         </div>
       </div>
     </div>

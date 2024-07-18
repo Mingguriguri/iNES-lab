@@ -3,7 +3,7 @@ from django.core.paginator import Paginator
 from .models import Projects, ProjectPhoto
 
 def ai_projects_list(request):
-    projects = Projects.objects.filter(team='AI')
+    projects = Projects.objects.filter(team='AI').order_by('-end_date', '-start_date')  # 최신순으로 정렬
     paginator = Paginator(projects, 5)  # 페이지당 5개의 프로젝트를 표시
     page = request.GET.get('page')
     projects = paginator.get_page(page)
@@ -18,7 +18,7 @@ def ai_projects_list(request):
     return render(request, 'labweb/project/ai_projects_list.html', context)
 
 def hw_projects_list(request):
-    projects = Projects.objects.filter(team='HW')
+    projects = Projects.objects.filter(team='HW').order_by('-end_date', '-start_date')  # 최신순으로 정렬
     paginator = Paginator(projects, 5)  # 페이지당 5개의 프로젝트를 표시
     page = request.GET.get('page')
     projects = paginator.get_page(page)
@@ -34,7 +34,7 @@ def hw_projects_list(request):
 
 def project_detail(request, project_id):
     project = get_object_or_404(Projects, pk=project_id)
-    keywords = project.keywords.split(';') if project.keywords else []
+    keywords = project.keywords.split(',') if project.keywords else []
     photos = project.photos.all()
     context = {
         'project': project,
