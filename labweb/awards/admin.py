@@ -8,6 +8,7 @@ from .models import Awards
 향상된 Many-to-Many 관리: filter_horizontal
 정렬: ordering
 '''
+
 @admin.register(Awards)
 class AwardsAdmin(admin.ModelAdmin):
     list_display = ('team', 'title', 'award_dates')
