@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 from member.models import member_list
 from area.models import Area
@@ -11,7 +12,7 @@ class Projects(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)  # Abstract으로 사용
     start_date = models.DateTimeField(blank=True, null=True)
-    end_date = models.DateTimeField(blank=True, null=True)
+    end_date = models.DateTimeField(default=datetime.datetime.now)
     project_lead = models.ForeignKey(member_list, on_delete=models.CASCADE, related_name='project_lead', blank=True, null=True)  # 프로젝트 리더
     members = models.ManyToManyField(member_list)  # 프로젝트에 참여하는 멤버들
     areas = models.ManyToManyField(Area, blank=True, null=True)  # 프로젝트 관련 영역
